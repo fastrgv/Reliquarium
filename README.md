@@ -4,9 +4,13 @@ Reliquarium is a set of four 3D slider puzzles, all with a Crystal Skull theme.
 Click on the large tar.gz file under releases for all source & binaries.
 
 
-# Reliquarium -- v 1.5
+# Reliquarium -- v 1.5.1
 
 ## Whats new:
+
+**ver 1.5.1 -- 12apr16**
+
+* Important library update for Gnu/Linux users on 27% of distros that do not provide FLAC, ogg, vorbis libraries.  Missing softlinks caused run failure.  That is now fixed.
 
 
 **ver 1.5 -- 6mar16**
@@ -145,18 +149,18 @@ Two [pre-compiled] binary executables are provided, one for gnu/linux and one fo
 Build scripts for GNAT2015 are provided.  Suggestions for improving the build process are welcome.
 
 -------------------------------------------------------
-MacOSX:
+MacOSX => ocmp.sh:
 
-ocmp.sh:  
 build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  Any Mac with a recent but standard configuration of OS-X should be able to rebuild using this script.  Here, all nonstandard libraries are included under the ./libs/ directory and are statically linked.
 
 ------------------------------------------------------
-GNU/Linux:  
+GNU/Linux => scmp.sh
 
-lcmp.sh:
 utilizes the uncommon relocatable libraries (mainly SDL2, SFML) that are delivered in this bundle under ./libs/.  This is used to build a dynamically linked [gnu/linux] executable, which should run in the presence of ./libs, whether or not your system has those libraries installed.
 
 If it doesnt run on your linux distro, you will have to try to build the executable yourself.  In that case, it is hoped that this script will work for you.  The intent was to provide all the needed interface/include files under ./libs/.
+
+If the delivered linux binary does not run on your distro, recompile with scmp.sh
 
 
 
