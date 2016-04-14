@@ -158,10 +158,7 @@ GNU/Linux => scmp.sh
 
 utilizes the uncommon relocatable libraries (mainly SDL2, SFML) that are delivered in this bundle under ./libs/.  This is used to build a dynamically linked [gnu/linux] executable, which should run in the presence of ./libs, whether or not your system has those libraries installed.
 
-If it doesnt run on your linux distro, you will have to try to build the executable yourself.  In that case, it is hoped that this script will work for you.  The intent was to provide all the needed interface/include files under ./libs/.
-
 If the delivered linux binary does not run on your distro, recompile with scmp.sh
-
 
 
 --------------------------
