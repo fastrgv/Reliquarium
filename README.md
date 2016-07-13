@@ -3,10 +3,16 @@ Reliquarium is a set of four 3D slider puzzles, all with a Crystal Skull theme.
 
 Click on the large tar.gz file under releases for all source & binaries.
 
-
-# Reliquarium -- v 1.5.1
+# Reliquarium -- v 1.5.2
 
 ## Whats new:
+
+**ver 1.5.2 -- 14jul16**
+
+* improved matching of sounds to movements
+* improved coding of snd4ada.cpp
+* improved & consolidated coding of gametypes.ads
+
 
 **ver 1.5.1 -- 12apr16**
 
@@ -196,4 +202,6 @@ Images for textures were from pixabay.com have a CC0 license.  Files for text-te
 ... to Serhiy and Peter Grabarchuk for their Hole in One puzzle [tomb2], one of the inspirations for Reliquarium.
 
 ----------------------------------------------------------------
+## Best Download Site for all my games:
+https://github.com/fastrgv?tab=repositories
 
