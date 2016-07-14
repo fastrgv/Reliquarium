@@ -68,11 +68,12 @@ Thus, for the C++ programmer the code should be easy to comprehend; and for the 
 
 
 ## Reliquarium Game Description
-Reliquarium is a set of four 3D slider puzzles, all with a Crystal Skull theme.
+
+Reliquarium is a unique set of four 3D slider puzzles, all with a Crystal Skull theme.
 
 Reckless raiders have plundered a tomb and displaced an ancient relic.  The objective is to return the relic to the center of its cubical box by rearranging the numbered blocks back into their proper order, which usually represents an RGB coloring...Red in the X-direction, Green in the Y-direction, Blue in the Z-direction.
 
-Dragging the cursor rotates the cube for a better view angle.  The mouse wheel zooms.  Typing a number 1..8 selects a block to move, 0 selects the relic itself.  Then use the keys {u,d,l,r,f,b} to move it.
+Dragging the cursor rotates the cube for a better view angle.  The mouse wheel zooms.  Typing a number 1..8 selects a block to move, 0 selects the relic itself.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
 
 Alternatively, you can select a block by clicking the cursor near your pick, prior to the move.
 
@@ -81,8 +82,6 @@ As indicated on screen, (h) will toggle a help screen.
 These puzzles are easy enough for children and will likely help with learning 3D visualization, geometry, problem solving and computer skills.
 
 Works on Macs running OS-X and PCs running GNU/Linux.
-
-
 
 
 ## Game Features
