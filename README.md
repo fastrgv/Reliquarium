@@ -5,11 +5,19 @@ Reliquarium is a set of four 3D slider puzzles, all with a Crystal Skull theme.
 
 Click on the large tar.gz file under releases for all source & binaries, or try this link:
 
-https://github.com/fastrgv/Reliquarium/releases/download/v1.5.2/reliq14jul16.tar.gz
+https://github.com/fastrgv/Reliquarium/releases/download/v1.5.3/relic30dec16.tar.gz
 
-# Reliquarium -- v 1.5.2
+
+# Reliquarium -- v 1.5.3
 
 ## Whats new:
+
+
+**ver 1.5.3 -- 30dec16**
+
+* Now using generalized SFML-audio interface code: snd4ada.cpp.
+* Improved build system to be compatible with more linux distros.
+* Improved OpenGL coding supports modest Intel embedded graphics hardware.
 
 **ver 1.5.2 -- 14jul16**
 
@@ -72,10 +80,9 @@ Thus, for the C++ programmer the code should be easy to comprehend; and for the 
 
 
 ## Reliquarium Game Description
-
 Reliquarium is a unique set of four 3D slider puzzles, all with a Crystal Skull theme.
 
-Reckless raiders have plundered a tomb and displaced an ancient relic.  The objective is to return the relic to the center of its cubical box by rearranging the numbered blocks back into their proper order, which usually represents an RGB coloring...Red in the X-direction, Green in the Y-direction, Blue in the Z-direction.
+Reckless raiders have plundered a tomb and displaced an ancient relic.  The objective is to return the relic to the center of its cubical box by rearranging the numbered blocks back into their proper order.
 
 Dragging the cursor rotates the cube for a better view angle.  The mouse wheel zooms.  Typing a number 1..8 selects a block to move, 0 selects the relic itself.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
 
@@ -86,6 +93,8 @@ As indicated on screen, (h) will toggle a help screen.
 These puzzles are easy enough for children and will likely help with learning 3D visualization, geometry, problem solving and computer skills.
 
 Works on Macs running OS-X and PCs running GNU/Linux.
+
+
 
 
 ## Game Features
@@ -128,6 +137,7 @@ For Mac users, there is now a Mac bundle (named "reliquarium.app") that acts lik
 
 ## Open Source libraries included for rebuilding:
 * systems:  OS-X or GNU/Linux
+* Xcode g++ compiler, if using OS-X
 * a recent gnat compiler
 * the included "libs" directory contains Ada interfaces:
 	* AdaPngLib
@@ -153,9 +163,10 @@ Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 
 ## Build instructions:
 
-Two [pre-compiled] binary executables are provided, one for gnu/linux and one for OS-X.  The linux version, reliquarium_gnu, are intended to run in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SFML, SDL2
+Two [pre-compiled] binary executables are provided, one for gnu/linux and one for OS-X.  The linux version, reliquarium_gnu, are intended to run in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:
+SDL2, SFML, FLAC, ogg, vorbis, & openal.
 
-Build scripts for GNAT2015 are provided.  Suggestions for improving the build process are welcome.
+Build scripts for GNAT2015 are provided;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required.
 
 -------------------------------------------------------
 MacOSX => ocmp.sh:
@@ -167,7 +178,22 @@ GNU/Linux => scmp.sh
 
 utilizes the uncommon relocatable libraries (mainly SDL2, SFML) that are delivered in this bundle under ./libs/.  This is used to build a dynamically linked [gnu/linux] executable, which should run in the presence of ./libs, whether or not your system has those libraries installed.
 
-If the delivered linux binary does not run on your distro, recompile with scmp.sh
+If it doesnt run on your linux distro, you will have to try to build the executable yourself.  In that case, it is hoped that this script will work for you.  The intent was to provide all the needed interface/include files under ./libs/.
+
+If the delivered linux binary does not run...
+
+* Manually install GNAT GPL from libre.adacore.com/download/.
+* Rerun the linux compile script scmp.sh or lcmp.sh
+
+
+### Link Problems during linux build:
+
+On a linux build machine, you might have minor link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+
+sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
+
+whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses accelerated graphics.
+
 
 
 --------------------------
