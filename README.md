@@ -9,13 +9,24 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.5.6/reliq14may17.tar
 
 
 
-# Reliquarium -- v 1.5.6 10may17
+# Reliquarium -- v 1.6.0
 
-## See revision history at end of file
+
+**ver 1.6.0 -- 11nov17**
+
+* added prebuilt executables for msWindows;
+* added working build scripts for msWindows;
+
+* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
+* Note that AdaCore 2017 works on OSX with no changes.
+* Added startup messages listing OGL profile & version;
+
+
+## See older revision history at end of file
 
 
 ## Reliquarium Game Description
-Reliquarium is a very unique set of four 3D slider puzzles, all with a Crystal Skull theme.
+Reliquarium is a very unique set of four 3D slider puzzles, all with a Crystal Skull theme.  Works on Macs running OSX and PCs running Windows or GNU/Linux.
 
 A reckless raider from Indiana has plundered tombs and displaced ancient relics.  The objective is to return each relic to the center of its cubical box by rearranging the numbered blocks back into their proper order.  Colors and numerals help determine the proper order.
 
@@ -27,8 +38,6 @@ As indicated on screen, (h) will toggle a help screen.
 
 These puzzles are easy enough for children and will likely help with learning 3D visualization, geometry, problem solving and computer skills.
 
-Works on Macs running OS-X and PCs running GNU/Linux.
-
 There are 4 variations numbered 2, 4, 5, and 6, according to a dimension of each puzzle.  Puzzles # 4, 5, & 6 are my own creations;  while #2 is a well-known Grabarchuk puzzle.  Generally, the puzzles with a smaller number are somewhat more difficult.  Puzzle #4 is the most difficult.
 
 
@@ -37,9 +46,9 @@ Temporarily combine complementary pieces to maximize contiguous empty swap space
 
 
 ## Game Features
-* Works on PCs or laptops running OS-X or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
+* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
 
-* Both GNU/Linux and OS-X binaries provided, as well as full source.
+* Windows, GNU/Linux and OSX binaries provided, as well as full source.
 
 * Laptop friendly controls;  supports Mac Retina displays.
 
@@ -51,30 +60,24 @@ Look direction is controlled by a touch pad swipe or mouse drag;
 
 Movement is controlled by the keys:  u d l r f b  (Up Down Left Right Forward Backward)
 
-...which might get confusing unless you keep the X-axis rightward, the Y-axis upward, and the Z-axis outward...the standard view for geometrical discussions in mathematics and physics.
+...which might get confusing unless you keep the X-axis rightward, the Y-axis upward, and the Z-axis outward; i.e. the standard view for geometrical discussions in mathematics and physics.
 
 (esc)-key => exit;  
 
-------------------------------------------------------------
 
-One way to start the game is to open a [command-line] console, navigate to the installation directory, and at the command line type "reliquarium" or "reliquarium_osx" on a Mac.
-
-In Linux, you may also double click the icon for reliquarium in the file manager.
-
-For Mac users, there is now a Mac bundle (named "reliquarium.app") that acts like a real Mac app.  You can put it into your personal Applications directory with the command "cp -r reliquarium.app ~/Applications".  You can navigate to the installation directory in Finder and click the reliquarium.app icon named "Reliquarium".
 
 ------------------------------------------------------------
 
 
 ## Required for running:
 
-* graphics card & driver that supports OpenGL version 3.3 or later;
-* GNU/Linux or a Mac running OS-X;
+* graphics card & updated driver that supports OpenGL version 3.3 or later;
+* Windows, GNU/Linux or OSX;
 
 
 ## Open Source libraries included for rebuilding:
-* systems:  OS-X or GNU/Linux
-* Xcode g++ compiler, if using OS-X
+* systems:  Windows, OSX or GNU/Linux
+* Xcode g++ compiler, if using OSX
 * a recent gnat compiler
 * the included "libs" directory contains Ada interfaces:
 	* AdaPngLib
@@ -83,11 +86,18 @@ For Mac users, there is now a Mac bundle (named "reliquarium.app") that acts lik
 
 
 ## Running Reliquarium:
-Unzip the archive and you will see a new directory appear with a name like "bundle_date", that you should rename to something like "install_directory".  
+Unzip the archive, open a command line terminal, then cd to the install directory.
 
-Linux users should cd to install_directory, then type "reliquarium" to start the game.
+Windows users type "reliquarium.exe".
+
+Linux users type "reliquarium_gnu" to start the game.
+In Linux, you may also double click the icon for reliquarium in the file manager.
 
 The Mac command line version is initiated by opening a terminal, navigating to the install_directory, and typing "reliquarium_osx" on the command line.
+
+For Mac users, there is now a Mac bundle (named "reliquarium.app") that acts like a real Mac app.  You can put it into your personal Applications directory with the command "cp -r reliquarium.app ~/Applications".  You can navigate to the installation directory in Finder and click the reliquarium.app icon named "Reliquarium".
+
+
 
 Select which of the four tombs to open by clicking on it.  Hit the (esc)-key at any time to return to the selector app;  hit (esc)-key again to quit completely.
 
@@ -101,15 +111,21 @@ Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 
 ## Build instructions:
 
-Two [pre-compiled] binary executables are provided, one for gnu/linux and one for OS-X.  The linux version, reliquarium, is intended to run in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:
+Three [pre-compiled] binary executables are provided, one for Windows, one for gnu/linux and one for OSX.  The linux version, reliquarium, is intended to run in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:
 SDL2, SFML, FLAC, ogg, vorbis, & openal.
 
 Build scripts for GNAT2016 are provided;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required.
 
 -------------------------------------------------------
+msWin32 => wbuildAll.bat
+
+build script that requires libraries included in ./libs/win/.
+
+
+-------------------------------------------------------
 MacOSX => obuildAll.sh:
 
-build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  Any Mac with a recent but standard configuration of OS-X should be able to rebuild using this script.  Here, all nonstandard libraries are included under the ./libs/ directory and are statically linked.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  Any Mac with a recent but standard configuration of OSX should be able to rebuild using this script.  Here, all nonstandard libraries are included under the ./libs/ directory and are statically linked.
 
 ------------------------------------------------------
 GNU/Linux => lbuildAll.sh
@@ -137,9 +153,9 @@ whence the linker should now be able to find what it wants.  But if there is mor
 
 
 ## What is special about this project?
-Uses the Ada programming language and fully modern OpenGL methods with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts, and compiles and runs on both GNU/Linux and Mac OS-X systems.
+Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability and freedom, no coding effort or compromise has been made to accomodate proprietary operating systems.  It relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+Focusing on portability and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
 
 Written in C++ style, the code neglects many safety features available to Ada, but it does serve as a working example for learning OpenGL.  The Ada bindings used are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings are usable as a standalone library for most any OpenGL project that uses Ada.
 
@@ -178,7 +194,7 @@ Some sounds are from freesound.org and are covered by the Creative Commons Attri
 Images for textures were from pixabay.com have a CC0 license.  Files for text-textures were created using gimp and are also covered by the GNU GPL v3 license.
 
 ## Thanks:
-... to Serhiy and Peter Grabarchuk for their Hole in One puzzle [tomb2], one of the inspirations for the other 3 puzzles in Reliquarium.
+... to Serhiy and Peter Grabarchuk for their Hole in One puzzle [tomb2], one of my inspirations for the other 3 puzzles in Reliquarium.
 
 ----------------------------------------------------------------
 ## Best Download Site for all my games:
@@ -188,9 +204,13 @@ https://github.com/fastrgv?tab=repositories
 
 ## Revision History:
 
+**ver 1.5.7 -- 14may17**
+* Corrected puzzle restart error;
+* Paused key responses during block motions;
+* Improved input response.
+
 
 **ver 1.5.6 -- 10may17**
-
 * Revised app structure to allow playing multiple puzzles without a restart, making it easier to use.  Also, each of the four tombs (tomb2, tomb4, tomb5, tomb6) is a separate executable that can be opened independently.
 
 
@@ -261,4 +281,5 @@ https://github.com/fastrgv?tab=repositories
 **ver 1.0 -- 21jan16**
 
 * initial release
+
 
