@@ -8,8 +8,14 @@ Click on the large tar.gz file under releases for all source & binaries, or try 
 https://github.com/fastrgv/Reliquarium/releases/download/v1.6.0/re11nov17.tar.gz
 
 
+# Reliquarium -- v 1.6.1
 
-# Reliquarium -- v 1.6.0
+
+
+**ver 1.6.1 -- 19nov17**
+
+* modified Windows game system to hide executables, DLLs;
+* now properly handle paths with embedded spaces;
 
 
 **ver 1.6.0 -- 11nov17**
@@ -75,27 +81,36 @@ Movement is controlled by the keys:  u d l r f b  (Up Down Left Right Forward Ba
 * Windows, GNU/Linux or OSX;
 
 
-## Open Source libraries included for rebuilding:
-* systems:  Windows, OSX or GNU/Linux
-* Xcode g++ compiler, if using OSX
-* a recent gnat compiler
-* the included "libs" directory contains Ada interfaces:
-	* AdaPngLib
-	* gl
-	* sdlada
+## Setup and Running Reliquarium:
+
+Windows users see also "windows-setup.txt".
+Mac users see "osx-setup.txt".
+
+Unzip the archive;
+
+There is a bit of extra setup required for Windows users:
+
+Windows users only:  link a directory as follows:
+
+	* open a command prompt window AS ADMINISTRATOR;
+	* CD to the install directory;
+	* CD to .\bin\win\
+	* run PREPDIRS.BAT [as administrator]
+	* close the admin command prompt window.
 
 
-## Running Reliquarium:
-Unzip the archive, open a command line terminal, then cd to the install directory.
+Now, everyone can follow these remaining steps:
 
-Windows users type "reliquarium.exe".
+Open a command line terminal, then cd to the install directory.
 
-Linux users type "reliquarium_gnu" to start the game.
+Windows users type "reliquarium_win.bat".
+
+Linux users type "reliquarium_gnu.sh" to start the game.
 In Linux, you may also double click the icon for reliquarium in the file manager.
 
-The Mac command line version is initiated by opening a terminal, navigating to the install_directory, and typing "reliquarium_osx" on the command line.
+The Mac command line version is initiated by opening a terminal, navigating to the install_directory, and typing "reliquarium_osx.sh" on the command line.
 
-For Mac users, there is now a Mac bundle (named "reliquarium.app") that acts like a real Mac app.  You can put it into your personal Applications directory with the command "cp -r reliquarium.app ~/Applications".  You can navigate to the installation directory in Finder and click the reliquarium.app icon named "Reliquarium".
+Also, for Mac users, there is a Mac bundle (named "reliquarium.app") that acts like a real Mac app.  You can put it into your personal Applications directory with the command "cp -r reliquarium.app ~/Applications".  You can navigate to the installation directory in Finder and click the reliquarium.app icon named "Reliquarium".
 
 
 
@@ -106,6 +121,16 @@ Select which of the four tombs to open by clicking on it.  Hit the (esc)-key at 
 Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 
 --------------------------------------------------------------------------
+
+## Open Source libraries included for rebuilding:
+* systems:  Windows, OSX or GNU/Linux
+* Xcode g++ compiler, if using OSX
+* a recent gnat compiler
+* the included "libs" directory contains Ada interfaces:
+	* AdaPngLib
+	* gl
+	* sdlada
+
 
 
 
@@ -119,7 +144,7 @@ Build scripts for GNAT2016 are provided;  and due to a recent script change, a l
 -------------------------------------------------------
 msWin32 => wbuildAll.bat
 
-build script that requires libraries included in ./libs/win/.
+build script that requires [static] libraries included in ./libs/win/.
 
 
 -------------------------------------------------------
@@ -281,5 +306,6 @@ https://github.com/fastrgv?tab=repositories
 **ver 1.0 -- 21jan16**
 
 * initial release
+
 
 
