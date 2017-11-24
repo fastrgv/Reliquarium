@@ -11,6 +11,12 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.6.0/relic19nov17.tar
 # Reliquarium -- v 1.6.1
 
 
+**ver 1.6.2 -- 24nov17**
+
+* simplified Windows setup.
+* improved key & mouse action.
+* upgraded to SDL v2.0.7 to solve a window focus problem.
+
 
 **ver 1.6.1 -- 19nov17**
 
@@ -87,19 +93,6 @@ Windows users see also "windows-setup.txt".
 Mac users see "osx-setup.txt".
 
 Unzip the archive;
-
-There is a bit of extra setup required for Windows users:
-
-Windows users only:  link a directory as follows:
-
-	* open a command prompt window AS ADMINISTRATOR;
-	* CD to the install directory;
-	* CD to .\bin\win\
-	* run PREPDIRS.BAT [as administrator]
-	* close the admin command prompt window.
-
-
-Now, everyone can follow these remaining steps:
 
 Open a command line terminal, then cd to the install directory.
 
