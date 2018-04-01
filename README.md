@@ -8,7 +8,15 @@ Click on the large tar.gz file under releases for all source & binaries, or try 
 https://github.com/fastrgv/Reliquarium/releases/download/v1.6.0/rel24nov17.tar.gz
 
 
-# Reliquarium -- v 1.6.1
+# Reliquarium
+
+
+**ver 1.6.3 -- 01apr18**
+
+* un-inverted all PNG files after fixing source code;
+* using nicer font;  improved utility name clarity;
+* improved selection screen geometry and description;
+* improved & simplified OSX builds;
 
 
 **ver 1.6.2 -- 24nov17**
