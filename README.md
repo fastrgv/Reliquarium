@@ -8,7 +8,14 @@ Click on the large tar.gz file under releases for all source & binaries, or try 
 https://github.com/fastrgv/Reliquarium/releases/download/v1.6.3/relic1apr18.tar.gz
 
 
+
 # Reliquarium
+
+
+**ver 1.6.4 -- 26jul18**
+
+* Added some local shared libs to enhance linux portability;
+* Added 3 alternate skins chosen by (c)-key, c for color;
 
 
 **ver 1.6.3 -- 01apr18**
@@ -17,29 +24,6 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.6.3/relic1apr18.tar.
 * using nicer font;  improved utility name clarity;
 * improved selection screen geometry and description;
 * improved & simplified OSX builds;
-
-
-**ver 1.6.2 -- 24nov17**
-
-* simplified Windows setup.
-* improved key & mouse action.
-* upgraded to SDL v2.0.7 to solve a window focus problem.
-
-
-**ver 1.6.1 -- 19nov17**
-
-* modified Windows game system to hide executables, DLLs;
-* now properly handle paths with embedded spaces;
-
-
-**ver 1.6.0 -- 11nov17**
-
-* added prebuilt executables for msWindows;
-* added working build scripts for msWindows;
-
-* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
-* Note that AdaCore 2017 works on OSX with no changes.
-* Added startup messages listing OGL profile & version;
 
 
 ## See older revision history at end of file
@@ -52,13 +36,13 @@ A reckless raider from Indiana has plundered tombs and displaced ancient relics.
 
 Dragging the cursor rotates the cube for a better view angle.  The mouse wheel zooms.  Typing a number selects a block to move.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
 
-Alternatively, you can select a block by clicking the cursor near your pick, prior to the move.
+Alternatively, you can select a block by clicking the cursor on it, prior to the move.
 
 As indicated on screen, (h) will toggle a help screen.
 
 These puzzles are easy enough for children and will likely help with learning 3D visualization, geometry, problem solving and computer skills.
 
-There are 4 variations numbered 2, 4, 5, and 6, according to a dimension of each puzzle.  Puzzles # 4, 5, & 6 are my own creations;  while #2 is a well-known Grabarchuk puzzle.  Generally, the puzzles with a smaller number are somewhat more difficult.  Puzzle #4 is the most difficult.
+There are 4 variations numbered 2, 4, 5, and 6.  Puzzles # 4, 5, & 6 are my own creations, where the numeral represents the vertical size;  while #2 is a well-known [2D] Grabarchuk puzzle.  Generally, the puzzles with a smaller number are somewhat more difficult.  Puzzle #4 is the most compact & difficult.
 
 
 ## Suggested Strategy
@@ -78,12 +62,26 @@ Temporarily combine complementary pieces to maximize contiguous empty swap space
 
 Look direction is controlled by a touch pad swipe or mouse drag;
 
-Movement is controlled by the keys:  u d l r f b  (Up Down Left Right Forward Backward)
+Movement is controlled by the keys:  
+	u d l r f b  (Up Down Left Right Forward Backward)
 
-...which might get confusing unless you keep the X-axis rightward, the Y-axis upward, and the Z-axis outward; i.e. the standard view for geometrical discussions in mathematics and physics.
+In other words...
+	forward/backward : moves block in Z direction
+	right/left       : moves block in X-direction
+	up/down          : moves block in Y-direction
 
-(esc)-key => exit;  
+i.e. the standard "view" for geometrical discussions in mathematics and physics.
 
+Other keys active:
+
+(esc)-key => Exit
+(mouseWheel) => Zoom
+(spc)-key => Restart
+(c)-key => nextSkinColor
+(h)-key => Help toggle
+0-9 => select numbered block
+(s)-key => select Skull
+(m)-key => select Medusa head
 
 
 ------------------------------------------------------------
@@ -102,17 +100,18 @@ Mac users see "osx-setup.txt".
 
 Unzip the archive;
 
+Windows users may see some error messages pertaining to directory links.  These can be ignored.
+
 Open a command line terminal, then cd to the install directory.
 
-Windows users type "reliquarium_win.bat".
+Windows users type "winreliq.bat".
 
-Linux users type "reliquarium_gnu.sh" to start the game.
+Linux users type "gnureliq.sh" to start the game.
 In Linux, you may also double click the icon for reliquarium in the file manager.
 
-The Mac command line version is initiated by opening a terminal, navigating to the install_directory, and typing "reliquarium_osx.sh" on the command line.
+The Mac command line version is initiated by opening a terminal, navigating to the install_directory, and typing "macreliq.sh" on the command line.
 
 Also, for Mac users, there is a Mac bundle (named "reliquarium.app") that acts like a real Mac app.  You can put it into your personal Applications directory with the command "cp -r reliquarium.app ~/Applications".  You can navigate to the installation directory in Finder and click the reliquarium.app icon named "Reliquarium".
-
 
 
 Select which of the four tombs to open by clicking on it.  Hit the (esc)-key at any time to return to the selector app;  hit (esc)-key again to quit completely.
@@ -134,13 +133,12 @@ Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 
 
 
-
 ## Build instructions:
 
 Three [pre-compiled] binary executables are provided, one for Windows, one for gnu/linux and one for OSX.  The linux version, reliquarium, is intended to run in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:
 SDL2, SFML, FLAC, ogg, vorbis, & openal.
 
-Build scripts for GNAT2016 are provided;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required.
+Build scripts for GNAT2016 are provided;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT is required.
 
 -------------------------------------------------------
 msWin32 => wbuildAll.bat
@@ -170,7 +168,7 @@ If the delivered linux binary does not run...
 
 ### Link Problems during linux build:
 
-On a linux build machine, you might have minor link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+On a linux build machine, you might have minor link errors, depending on its configuration.  For example, if you are missing "libz", you can copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
 
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
@@ -181,11 +179,11 @@ whence the linker should now be able to find what it wants.  But if there is mor
 ## What is special about this project?
 Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+Focusing on portability and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding, a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
 
 Written in C++ style, the code neglects many safety features available to Ada, but it does serve as a working example for learning OpenGL.  The Ada bindings used are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings are usable as a standalone library for most any OpenGL project that uses Ada.
 
-Thus, for the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many potential improvements to be made.  Suggestions or improvements from Ada developers are not only welcomed, but solicited.
+Thus, for the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many potential improvements to be made.  Suggestions or improvements from Ada developers are welcomed.
 
 
 --------------------------
@@ -229,6 +227,29 @@ https://github.com/fastrgv?tab=repositories
 
 
 ## Revision History:
+
+**ver 1.6.2 -- 24nov17**
+
+* simplified Windows setup.
+* improved key & mouse action.
+* upgraded to SDL v2.0.7 to solve a window focus problem.
+
+
+**ver 1.6.1 -- 19nov17**
+
+* modified Windows game system to hide executables, DLLs;
+* now properly handle paths with embedded spaces;
+
+
+**ver 1.6.0 -- 11nov17**
+
+* added prebuilt executables for msWindows;
+* added working build scripts for msWindows;
+
+* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
+* Note that AdaCore 2017 works on OSX with no changes.
+* Added startup messages listing OGL profile & version;
+
 
 **ver 1.5.7 -- 14may17**
 * Corrected puzzle restart error;
@@ -307,6 +328,5 @@ https://github.com/fastrgv?tab=repositories
 **ver 1.0 -- 21jan16**
 
 * initial release
-
 
 
