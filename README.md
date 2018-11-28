@@ -11,6 +11,11 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.6.4/rel26jul18.tar.g
 
 # Reliquarium
 
+**ver 1.6.5 -- 29nov18**
+
+* Now using sdl v207 uniformly (all platforms);
+* Now using sfml v250 uniformly;
+
 
 **ver 1.6.4 -- 26jul18**
 
