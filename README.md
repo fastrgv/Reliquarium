@@ -11,6 +11,14 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.6.5/re29nov18.tar.gz
 
 # Reliquarium
 
+
+**ver 1.6.6 -- 14dec18**
+
+* Added zoom keys n/a (Nearer/Away);
+* Updated to sdl v208;
+* Improved linux build for better portability;
+
+
 **ver 1.6.5 -- 29nov18**
 
 * Now using sdl v207 uniformly (all platforms);
