@@ -7,6 +7,9 @@ Click on the large tar.gz file under releases for all source & binaries, or try 
 
 https://github.com/fastrgv/Reliquarium/releases/download/v1.6.6/re14dec18.tar.gz
 
+or for Windows users:
+https://github.com/fastrgv/Reliquarium/releases/download/v1.6.6/re14dec18tar.zip
+
 
 
 # Reliquarium
