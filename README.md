@@ -114,9 +114,11 @@ Other keys active:
 Windows users see also "windows-setup.txt".
 Mac users see "osx-setup.txt".
 
-Unzip the archive;
 
-Windows users may see some error messages pertaining to directory links.  These can be ignored.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this;  but so does the intrinsic command "tar -xf [filename].tar.gz", which extracts everything into the current directory.
+
+Windows users may see some error messages (that may be ignored) pertaining to directory links.  Directory links are needed only on OSX & Linux.
+
 
 Open a command line terminal, then cd to the install directory.
 
