@@ -5,15 +5,15 @@ Reliquarium is a set of four 3D slider puzzles, all with a Crystal Skull theme.
 
 Click on the large tar.gz file under releases for all source & binaries, or try this link:
 
-https://github.com/fastrgv/Reliquarium/releases/download/v1.6.6/re14dec18.tar.gz
-
-or for Windows users:
-https://github.com/fastrgv/Reliquarium/releases/download/v1.6.6/re14dec18tar.zip
 
 
 
 # Reliquarium
 
+**ver 1.6.7 -- 7jan19**
+
+* Added closeWindow handler;
+* Now deliver 7z archive;
 
 **ver 1.6.6 -- 14dec18**
 
