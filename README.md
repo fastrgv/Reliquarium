@@ -12,6 +12,15 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.6.7/re7jan19.7z
 
 # Reliquarium
 
+**ver 1.6.8 -- 26jun19**
+
+* Updated SDL2 to version 2.0.9
+* Updated Ada binding to SDL2;
+* Changed axis labels to High Contrast Font;
+* Darkened background;
+* Executables can now be run from either of 2 directories.
+
+
 **ver 1.6.7 -- 7jan19**
 
 * Added closeWindow handler;
