@@ -12,6 +12,12 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.6.8/re26jun19.7z
 
 # Reliquarium
 
+**ver 1.6.9 -- 26nov19**
+
+* Repaired a library problem with GNU/Linux build that limited portability.
+* No problems with Mac/OSX or M.S. Windows builds.
+
+
 **ver 1.6.8 -- 26jun19**
 
 * Updated SDL2 to version 2.0.9
