@@ -12,6 +12,11 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.6.9/re26nov19.7z
 
 # Reliquarium
 
+**ver 1.7.0 -- 20dec19**
+
+* Fixed path problem that disallowed running from "relic" directory.
+* Updated SDL2 to v2.0.10, including binding, libs, & scripts.
+
 **ver 1.6.9 -- 26nov19**
 
 * Repaired a library problem with GNU/Linux build that limited portability.
