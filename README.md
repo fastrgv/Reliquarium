@@ -22,6 +22,13 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.7.0/re20dec19.7z
 * Added FreeTypeAda (w/TTF);
 * Corrected & improved help screens;
 
+**ver 1.8.0 -- 28dec19**
+
+* Converted to GLFW;
+* Improved & simplified code structure & layout;
+
+
+
 
 
 **ver 1.7.0 -- 20dec19**
