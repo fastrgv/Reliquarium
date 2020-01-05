@@ -12,70 +12,18 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.8.1/re5jan20.7z
 
 # Reliquarium
 
+
+
 **ver 1.8.1 -- 5jan20**
 
 * Added FreeTypeAda (w/TTF);
 * Corrected & improved help screens;
 
+
 **ver 1.8.0 -- 28dec19**
 
 * Converted to GLFW;
 * Improved & simplified code structure & layout;
-
-
-
-
-
-**ver 1.7.0 -- 20dec19**
-
-* Fixed path problem that disallowed running from "relic" directory.
-* Updated SDL2 to v2.0.10, including binding, libs, & scripts.
-
-**ver 1.6.9 -- 26nov19**
-
-* Repaired a library problem with GNU/Linux build that limited portability.
-* No problems with Mac/OSX or M.S. Windows builds.
-
-
-**ver 1.6.8 -- 26jun19**
-
-* Updated SDL2 to version 2.0.9
-* Updated Ada binding to SDL2;
-* Changed axis labels to High Contrast Font;
-* Darkened background;
-* Executables can now be run from either of 2 directories.
-
-
-**ver 1.6.7 -- 7jan19**
-
-* Added closeWindow handler;
-* Now deliver 7z archive;
-
-**ver 1.6.6 -- 14dec18**
-
-* Added zoom keys n/a (Nearer/Away);
-* Updated to sdl v208;
-* Improved linux build for better portability;
-
-
-**ver 1.6.5 -- 29nov18**
-
-* Now using sdl v207 uniformly (all platforms);
-* Now using sfml v250 uniformly;
-
-
-**ver 1.6.4 -- 26jul18**
-
-* Added some local shared libs to enhance linux portability;
-* Added 3 alternate skins chosen by (c)-key, c for color;
-
-
-**ver 1.6.3 -- 01apr18**
-
-* un-inverted all PNG files after fixing source code;
-* using nicer font;  improved utility name clarity;
-* improved selection screen geometry and description;
-* improved & simplified OSX builds;
 
 
 ## See older revision history at end of file
@@ -84,20 +32,20 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.8.1/re5jan20.7z
 ## Reliquarium Game Description
 Reliquarium is a very unique set of four 3D slider puzzles, all with a Crystal Skull theme.  Works on Macs running OSX and PCs running Windows or GNU/Linux.
 
-A reckless raider from Indiana has plundered tombs and displaced ancient relics.  The objective is to return each relic to the center of its cubical box by rearranging the numbered blocks back into their proper order.  Colors and numerals help determine the proper order.
+A reckless raider from Indiana has plundered tombs and displaced ancient relics.  The objective is to carefully return each relic to its rightful place at the center of its cubical box by rearranging the numbered blocks back into their proper order.  Colors and numerals help determine the proper order.
 
-Dragging the cursor rotates the cube for a better view angle.  The mouse wheel zooms.  Typing a number selects a block to move.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
+Dragging the cursor rotates the cube for a better view angle.  The keys n/a [Nearer/Away] or the mouse wheel zooms.  Typing a number selects a block to move.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
 
 Alternatively, you can select a block by clicking the cursor on it, prior to the move.
 
 As indicated on screen, (h) will toggle a help screen.
 
-These puzzles are easy enough for children and will likely help with learning 3D visualization, geometry, problem solving and computer skills.
+These puzzles are easy enough for children but will likely help anyone improve their 3D visualization, geometry, problem solving and computer skills.
 
 There are 4 variations numbered 2, 4, 5, and 6.  Puzzles # 4, 5, & 6 are my own creations, where the numeral represents the vertical size;  while #2 is a well-known [2D] Grabarchuk puzzle.  Generally, the puzzles with a smaller number are somewhat more difficult.  Puzzle #4 is the most compact & difficult.
 
 
-## Suggested Strategy
+## General Strategy
 Temporarily combine complementary pieces to maximize contiguous empty swap space.
 
 
@@ -118,16 +66,18 @@ Movement is controlled by the keys:
 	u d l r f b  (Up Down Left Right Forward Backward)
 
 In other words...
-	forward/backward : moves block in Z direction
-	right/left       : moves block in X-direction
-	up/down          : moves block in Y-direction
+	forward/backward : moves selected block in Z direction
+	right/left       : moves selected block in X-direction
+	up/down          : moves selected block in Y-direction
 
-i.e. the standard "view" for geometrical discussions in mathematics and physics.
+This terminology for key-assignments assumes X+ is rightward, Y+ is upward, and Z+ is outward...the standard "view" for geometrical discussions in mathematics and physics.  Note that the X, Y, & Z Axes are displayed by default.
 
 Other keys active:
 
-(esc)-key => Exit
+(esc)-key => Exit puzzle
+(q)-key => Exit selection screen
 (mouseWheel) => Zoom
+(i)/(o)-keys => Zoom In/Out
 (spc)-key => Restart
 (c)-key => nextSkinColor
 (h)-key => Help toggle
@@ -147,9 +97,8 @@ Other keys active:
 
 ## Setup and Running Reliquarium:
 
-Windows users see also "windows-setup.txt".
+Windows users should read "windows-setup.txt".
 Mac users see "osx-setup.txt".
-
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.  On OSX, you can use Keka.
 
@@ -162,10 +111,10 @@ In Linux, you may also double click the icon for reliquarium in the file manager
 
 The Mac command line version is initiated by opening a terminal, navigating to the install_directory, and typing "macreliq.sh" on the command line.
 
-Also, for Mac users, there is a Mac bundle (named "reliquarium.app") that acts like a real Mac app.  You can put it into your personal Applications directory with the command "cp -r reliquarium.app ~/Applications".  You can navigate to the installation directory in Finder and click the reliquarium.app icon named "Reliquarium".
+Also, for Mac users, there is a Mac bundle (named "reliquarium.app") that acts like a typical Mac app.  You can put it into your personal Applications directory with the command "cp -r reliquarium.app ~/Applications".  You can navigate to the installation directory in Finder and click the reliquarium.app icon named "Reliquarium".
 
 
-Select which of the four tombs to open by clicking on it.  Hit the (esc)-key at any time to return to the selector app;  hit (esc)-key again to quit completely.
+Select which of the four tombs to open by clicking on it.  Hit the (esc)-key at any time to return to the selector app;  hit (q)-key to quit completely.
 
 --------------------------------------------------------------------------
 
@@ -180,14 +129,14 @@ Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 * the included "libs" directory contains Ada interfaces:
 	* AdaPngLib
 	* gl
-	* sdlada
+	* glfwada
 
 
 
 ## Build instructions:
 
 Three [pre-compiled] binary executables are provided, one for Windows, one for gnu/linux and one for OSX.  The linux version, reliquarium, is intended to run in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:
-SDL2, SFML, FLAC, ogg, vorbis, & openal.
+GLFW2, SFML, FLAC, ogg, vorbis, & openal.
 
 Build scripts for GNAT2016 are provided;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT is required.
 
@@ -200,12 +149,12 @@ build script that requires [static] libraries included in ./libs/win/.
 -------------------------------------------------------
 MacOSX => obuildAll.sh:
 
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  Any Mac with a recent but standard configuration of OSX should be able to rebuild using this script.  Here, all nonstandard libraries are included under the ./libs/ directory and are statically linked.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW or SFML installed.  Any Mac with a recent but standard configuration of OSX should be able to rebuild using this script.  Here, all nonstandard libraries are included under the ./libs/ directory and are statically linked.
 
 ------------------------------------------------------
 GNU/Linux => lbuildAll.sh
 
-utilizes the uncommon relocatable libraries (mainly SDL2, SFML) that are delivered in this bundle under ./libs/.  This is used to build a dynamically linked [gnu/linux] executable, which should run in the presence of ./libs, whether or not your system has those libraries installed.
+utilizes the uncommon relocatable libraries (mainly GLFW, SFML) that are delivered in this bundle under ./libs/.  This is used to build a dynamically linked [gnu/linux] executable, which should run in the presence of ./libs, whether or not your system has those libraries installed.
 
 If it doesnt run on your linux distro, you will have to try to build the executable yourself.  In that case, it is hoped that this script will work for you.  The intent was to provide all the needed interface/include files under ./libs/.
 
@@ -219,18 +168,18 @@ If the delivered linux binary does not run...
 
 ### Link Problems during linux build:
 
-On a linux build machine, you might have minor link errors, depending on its configuration.  For example, if you are missing "libz", you can copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+On a linux build machine, you might have minor link errors, depending on its configuration.  For example, if you are missing "libz", you can copy "libz.so" from GNAT.../lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
 
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
-whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses your accelerated-graphic-driver.
+whence the linker should now be able to find what it wants.  But if there is more than one file libGL present on your system, make sure you use the best one;  i.e. the one that uses your accelerated-graphic-driver.
 
 
 
 ## What is special about this project?
-Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding, a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, SFML-Audio with a homebrew binding, and a GNAT compiler.
 
 Written in C++ style, the code neglects many safety features available to Ada, but it does serve as a working example for learning OpenGL.  The Ada bindings used are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings are usable as a standalone library for most any OpenGL project that uses Ada.
 
@@ -244,7 +193,7 @@ Thus, for the C++ programmer the code should be easy to comprehend; and for the 
 Reliquarium is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2017  <fastrgv@gmail.com>
+ Copyright (C) 2020  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -279,105 +228,29 @@ https://github.com/fastrgv?tab=repositories
 
 ## Revision History:
 
-**ver 1.6.2 -- 24nov17**
+**ver 1.7.0 -- 20dec19**
 
-* simplified Windows setup.
-* improved key & mouse action.
-* upgraded to SDL v2.0.7 to solve a window focus problem.
-
-
-**ver 1.6.1 -- 19nov17**
-
-* modified Windows game system to hide executables, DLLs;
-* now properly handle paths with embedded spaces;
+* Fixed path problem that disallowed running from "relic" directory.
+* Updated SDL2 to v2.0.10, including binding, libs, & scripts.
 
 
-**ver 1.6.0 -- 11nov17**
+**ver 1.6.9 -- 26nov19**
 
-* added prebuilt executables for msWindows;
-* added working build scripts for msWindows;
-
-* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
-* Note that AdaCore 2017 works on OSX with no changes.
-* Added startup messages listing OGL profile & version;
+* Repaired a library problem with GNU/Linux build that limited portability.
+* No problems with Mac/OSX or M.S. Windows builds.
 
 
-**ver 1.5.7 -- 14may17**
-* Corrected puzzle restart error;
-* Paused key responses during block motions;
-* Improved input response.
+**ver 1.6.8 -- 26jun19**
 
+* Updated SDL2 to version 2.0.9
+* Updated Ada binding to SDL2;
+* Changed axis labels to High Contrast Font;
+* Darkened background;
+* Executables can now be run from either of 2 directories.
 
-**ver 1.5.6 -- 10may17**
-* Revised app structure to allow playing multiple puzzles without a restart, making it easier to use.  Also, each of the four tombs (tomb2, tomb4, tomb5, tomb6) is a separate executable that can be opened independently.
-
-
-**ver 1.5.5 -- 6apr17**
-
-* Better error checking in shader package;
-* Removed OpenGL-deprecated functions;
-* Revised directory structure, simplified codes;
-
-
-**ver 1.5.4 -- 3jan17**
-
-* Updated to use new SFML libs.
-* Corrected a duplicate window glitch.
-* Refined compiler scripts.
-
-
-**ver 1.5.3 -- 30dec16**
-
-* Now using generalized SFML-audio interface code: snd4ada.cpp.
-* Improved build system to be compatible with more linux distros.
-* Improved OpenGL coding supports modest Intel embedded graphics hardware.
-
-**ver 1.5.2 -- 14jul16**
-
-* improved matching of sounds to movements
-* improved coding of snd4ada.cpp
-* improved & consolidated coding of gametypes.ads
-
-
-**ver 1.5.1 -- 12apr16**
-
-* Important library update for Gnu/Linux users on 27% of distros that do not provide FLAC, ogg, vorbis libraries.  Missing softlinks caused run failure.  That is now fixed.
-
-
-**ver 1.5 -- 6mar16**
-
-* The 4x4x4 Tomb now has its finalizing "improvement".  Two more 1x1x1 cubelets complete the symmetry, while adding to the difficulty.  Yes, it is still solvable!
-
-
-**ver 1.4 -- 5mar16**
-
-* The 4x4x4 Tomb [the upper right puzzle] has revised corner stones that make it far more difficult.  Good luck!
-* The Space-Key will now Restart the puzzle.
-
-**ver 1.3 -- 21feb16**
-
-* Restructured four into a single application.
-* Added Mac binary bundle that acts like a typical Mac App.  This app is delivered in the installation directory, but could be moved elsewhere, such as your personal Applications directory [and initiated with a click].  Note that there are some soft [symbolic] links in the bundle that are resolved automatically when copied with the command "cp -r reliquarium.app destination-directory".
-* Generalized utex package;  client defines character set file.
-
-
-**ver 1.2 -- 25jan16**
-
-* added shriek to Medusa's final enclosure.
-* added gradual block moves.
-* fixed error in proximity-pick.
-* found and fixed block move logic errors.
-
-**ver 1.1 -- 23jan16**
-
-* added a 4th puzzle called tomb2, that is a version of "hole in one", a puzzle invented by Serhiy and Peter Grabarchuk.
-* added logic to automatically select the first possible candidate for a move if the specified candidate is not feasible.
-* added capability to select a block with a cursor click, using either:
-	* mouse right-click
-	* 2-finger click on a MacBook trackpad
+...
 
 **ver 1.0 -- 21jan16**
 
 * initial release
-
 
