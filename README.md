@@ -68,25 +68,23 @@ Movement is controlled by the keys:
 In other words...
 
 * forward/backward : moves selected block in Z direction
-
 * right/left       : moves selected block in X-direction
-
 * up/down          : moves selected block in Y-direction
 
 This terminology for key-assignments assumes X+ is rightward, Y+ is upward, and Z+ is outward...the standard "view" for geometrical discussions in mathematics and physics.  Note that the X, Y, & Z Axes are displayed by default.
 
 Other keys active:
 
-(esc)-key => Exit puzzle
-(q)-key => Exit selection screen
-(mouseWheel) => Zoom
-(i)/(o)-keys => Zoom In/Out
-(spc)-key => Restart
-(c)-key => nextSkinColor
-(h)-key => Help toggle
-0-9 => select numbered block
-(s)-key => select Skull
-(m)-key => select Medusa head
+* (esc)-key => Exit puzzle
+* (q)-key => Exit selection screen
+* (mouseWheel) => Zoom
+* (i)/(o)-keys => Zoom In/Out
+* (spc)-key => Restart
+* (c)-key => nextSkinColor
+* (h)-key => Help toggle
+* 0-9 => select numbered block
+* (s)-key => select Skull
+* (m)-key => select Medusa head
 
 
 ------------------------------------------------------------
