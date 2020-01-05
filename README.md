@@ -131,6 +131,7 @@ Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 	* AdaPngLib
 	* gl
 	* glfwada
+	* FreeTypeAda
 
 
 
