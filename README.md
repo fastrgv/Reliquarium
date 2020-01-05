@@ -66,9 +66,12 @@ Movement is controlled by the keys:
 	u d l r f b  (Up Down Left Right Forward Backward)
 
 In other words...
-	forward/backward : moves selected block in Z direction
-	right/left       : moves selected block in X-direction
-	up/down          : moves selected block in Y-direction
+
+* forward/backward : moves selected block in Z direction
+
+* right/left       : moves selected block in X-direction
+
+* up/down          : moves selected block in Y-direction
 
 This terminology for key-assignments assumes X+ is rightward, Y+ is upward, and Z+ is outward...the standard "view" for geometrical discussions in mathematics and physics.  Note that the X, Y, & Z Axes are displayed by default.
 
