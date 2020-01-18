@@ -12,7 +12,9 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.8.1/re15jan20.7z
 
 # Reliquarium
 
+**ver 1.8.2 -- 18jan20**
 
+* Greatly improved Linux portability;
 
 **ver 1.8.1 -- 5jan20**
 
