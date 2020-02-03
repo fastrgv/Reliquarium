@@ -54,7 +54,7 @@ Temporarily combine complementary pieces to maximize contiguous empty swap space
 ## Game Features
 * Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
 
-* Windows, GNU/Linux and OSX binaries provided, as well as full source.
+* Windows, GNU/Linux and OSX binaries provided, as well as full source. New linux binary now runs on many linux distros!
 
 * Laptop friendly controls;  supports Mac Retina displays.
 
