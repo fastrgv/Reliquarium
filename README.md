@@ -12,6 +12,11 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.8.3/re10mar20.7z
 
 # Reliquarium
 
+**ver 1.8.4 -- 4apr20**
+
+* Created new linux sound system with no latency:  a WAV-player using an Ada binding to the ALSA sound library.
+* Sliding sounds have been reenabled; other sounds equilibrated.
+
 
 **ver 1.8.3 -- 10mar20**
 
