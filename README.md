@@ -12,6 +12,13 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.8.3/re4apr20.7z
 
 # Reliquarium
 
+**ver 1.8.5 -- 18apr20**
+
+* OpenGL v3.3 is now sufficient to run this app...allows older hardware.
+* Improved coding style to read WAV file while "protected";
+* Added a move-sound mute-toggle using v-key (Volume);
+
+
 **ver 1.8.4 -- 4apr20**
 
 * Created new linux sound system with no latency:  a WAV-player using an Ada binding to the ALSA sound library.
