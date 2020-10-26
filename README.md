@@ -6,7 +6,7 @@ Reliquarium is a very unique set of four 3D slider puzzles, all with a Crystal S
 There are now two versions with differing internals...
 Click on the large 7z file under releases for all source & binaries, or try this link:
 
-https://github.com/fastrgv/Reliquarium/releases/download/v1.8.5/re18apr20.7z
+https://github.com/fastrgv/Reliquarium/releases/download/v1.8.6/re27oct20.7z
 
 
 
