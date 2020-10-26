@@ -12,37 +12,36 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.8.5/re18apr20.7z
 
 # Reliquarium
 
-**ver 1.8.5 -- 18apr20**
+**ver 1.8.6 -- 28oct20**
+* Updated all glfw libs to v3.3.2.
+* Elliminated SFML-audio entirely.
+* Greatly simplified build process.
 
+**ver 1.8.5 -- 18apr20**
 * OpenGL v3.3 is now sufficient to run this app...allows older hardware.
 * Improved coding style to read WAV file while "protected";
 * Added a move-sound mute-toggle using v-key (Volume);
 
 
 **ver 1.8.4 -- 4apr20**
-
 * Created new linux sound system with no latency:  a WAV-player using an Ada binding to the ALSA sound library.
 * Sliding sounds have been reenabled; other sounds equilibrated.
 
 
 **ver 1.8.3 -- 10mar20**
-
 * Fixed bad sound file.
 
 
 **ver 1.8.2 -- 18jan20**
-
 * Alternate sound system greatly improves linux portability.
 
 
 **ver 1.8.1 -- 5jan20**
-
 * Added FreeTypeAda (w/TTF);
 * Corrected & improved help screens;
 
 
 **ver 1.8.0 -- 28dec19**
-
 * Converted to GLFW;
 * Improved & simplified code structure & layout;
 
