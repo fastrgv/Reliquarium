@@ -10,51 +10,23 @@ https://github.com/fastrgv/Reliquarium/releases/download/v1.8.6/re27oct20.7z
 
 
 
-# Reliquarium
-
-**ver 1.8.6 -- 28oct20**
-* Updated all glfw libs to v3.3.2.
-* Elliminated SFML-audio entirely.
-* Greatly simplified build process.
-
-**ver 1.8.5 -- 18apr20**
-* OpenGL v3.3 is now sufficient to run this app...allows older hardware.
-* Improved coding style to read WAV file while "protected";
-* Added a move-sound mute-toggle using v-key (Volume);
+# Reliquarium with OpenAL sound
 
 
-**ver 1.8.4 -- 4apr20**
-* Created new linux sound system with no latency:  a WAV-player using an Ada binding to the ALSA sound library.
-* Sliding sounds have been reenabled; other sounds equilibrated.
+**ver 1.8.7 -- 20feb21**
 
-
-**ver 1.8.3 -- 10mar20**
-* Fixed bad sound file.
-
-
-**ver 1.8.2 -- 18jan20**
-* Alternate sound system greatly improves linux portability.
-
-
-**ver 1.8.1 -- 5jan20**
-* Added FreeTypeAda (w/TTF);
-* Corrected & improved help screens;
-
-
-**ver 1.8.0 -- 28dec19**
-* Converted to GLFW;
-* Improved & simplified code structure & layout;
-
+* Upgraded to OpenAL sound.
 
 ## See older revision history at end of file
+
 
 
 ## Reliquarium Game Description
 Reliquarium is a very unique set of four 3D slider puzzles, all with a Crystal Skull theme.  Works on Macs running OSX and PCs running Windows or GNU/Linux.
 
-A reckless raider from Indiana has plundered tombs and displaced ancient relics.  The objective is to carefully return each relic to its rightful place at the center of its cubical box by rearranging the numbered blocks back into their proper order.  Colors and numerals help determine the proper order.
+A reckless raider from Indiana has been plundering tombs and displacing ancient relics.  The objective is to carefully return each relic to its rightful place at the center of its cubical box by rearranging the numbered blocks back into their proper order.  Colors and numerals help determine the proper order.
 
-Dragging the cursor rotates the cube for a better view angle.  The keys n/a [Nearer/Away] or the mouse wheel zooms.  Typing a number selects a block to move.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
+Dragging the cursor rotates the cube for a better view angle.  The keys n/a (Nearer/Away) or the mouse wheel zooms.  Typing a number selects a block to move.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
 
 Alternatively, you can select a block by clicking the cursor on it, prior to the move.
 
@@ -72,7 +44,7 @@ Temporarily combine complementary pieces to maximize contiguous empty swap space
 ## Game Features
 * Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
 
-* Windows, GNU/Linux and OSX binaries provided, as well as full source. New linux binary now runs on many linux distros!
+* Windows, GNU/Linux and OSX binaries provided, as well as full source.
 
 * Laptop friendly controls;  supports Mac Retina displays.
 
@@ -87,11 +59,13 @@ Movement is controlled by the keys:
 
 In other words...
 
-* forward/backward : moves selected block in Z direction
-* right/left       : moves selected block in X-direction
-* up/down          : moves selected block in Y-direction
+*	forward/backward : moves selected block in Z direction
+*	right/left       : moves selected block in X-direction
+*	up/down          : moves selected block in Y-direction
 
 This terminology for key-assignments assumes X+ is rightward, Y+ is upward, and Z+ is outward...the standard "view" for geometrical discussions in mathematics and physics.  Note that the X, Y, & Z Axes are displayed by default.
+
+Obviously this might get confusing if you rotate the figure to get a better look. That is part of the challenge!
 
 Other keys active:
 
@@ -107,14 +81,13 @@ Other keys active:
 * (m)-key => select Medusa head
 * (v)-key => toggle move-sounds
 
-
 ------------------------------------------------------------
 
 
 ## Required for running:
 
 * graphics card & updated driver that supports OpenGL version 3.3 or later;
-* Windows, GNU/Linux or OSX;
+* Windows, GNU/Linux or OSX>=10.13(sep2017);
 
 
 ## Setup and Running Reliquarium:
@@ -126,17 +99,30 @@ Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.  On OSX,
 
 Open a command line terminal, then cd to the install directory.
 
+--------------------------------------------------------------------
 Windows users type "winreliq.bat".
 
+--------------------------------------------------------------------
 Linux users type "gnureliq.sh" to start the game.
 In Linux, you may also double click the icon for reliquarium in the file manager.
 
+The distributed linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to recompile. Another option, however is that linux users can probably run the Windows executables under "wine". Here is an example that works on my linux machine:
+
+		wine bin/win/tomb6.exe
+
+Thusly, each executable can be called directly, skipping the selection screen. Without wine that would be:
+
+		bin/gnu/tomb6
+
+--------------------------------------------------------------------
 The Mac command line version is initiated by opening a terminal, navigating to the install_directory, and typing "macreliq.sh" on the command line.
 
 Also, for Mac users, there is a Mac bundle (named "reliquarium.app") that acts like a typical Mac app.  You can put it into your personal Applications directory with the command "cp -r reliquarium.app ~/Applications".  You can navigate to the installation directory in Finder and click the reliquarium.app icon named "Reliquarium".
 
 
 Select which of the four tombs to open by clicking on it.  Hit the (esc)-key at any time to return to the selector app;  hit (q)-key to quit completely.
+
+Hint: if the move sound goes silent, you probably hit the "v" key by mistake.
 
 --------------------------------------------------------------------------
 
@@ -146,52 +132,43 @@ Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 
 ## Open Source libraries included for rebuilding:
 * systems:  Windows, OSX or GNU/Linux
-* Xcode g++ compiler, if using OSX
 * a recent gnat compiler
-* the included "libs" directory contains Ada interfaces:
+* the ./adabindings/ directory contains Ada interfaces for:
 	* AdaPngLib
 	* gl
-	* glfwada
-	* FreeTypeAda
+	* glfw
+	* FreeType
+	* OpenAL (Windows)
 
 
 
 ## Build instructions:
 
 Three [pre-compiled] binary executables are provided, one for Windows, one for gnu/linux and one for OSX.  The linux version, reliquarium, is intended to run in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:
-GLFW2, SFML, FLAC, ogg, vorbis, & openal.
+GLFW2, & freetype.
 
-Build scripts for GNAT2016 are provided;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT is required.
+Build scripts for the free AdaCore GNAT compiler are provided;  a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT is required.
 
 -------------------------------------------------------
 msWin32 => wbuildAll.bat
 
-build script that requires [static] libraries included in ./libs/win/.
-
+Note that the 64-bit AdaCore gnat compiler needs to be on your path to use this script.
 
 -------------------------------------------------------
 MacOSX => obuildAll.sh:
 
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW or SFML installed.  Any Mac with a recent but standard configuration of OSX should be able to rebuild using this script.  Here, all nonstandard libraries are included under the ./libs/ directory and are statically linked.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries installed.  Any Mac with a recent but standard configuration of OSX should be able to rebuild using this script.  Here, all nonstandard libraries are included under the ./libs/ directory and are statically linked.
 
 ------------------------------------------------------
 GNU/Linux => lbuildAll.sh
 
 utilizes the uncommon relocatable libraries (mainly GLFW) that are delivered in this bundle under ./libs/.  This is used to build a dynamically linked [gnu/linux] executable, which should run in the presence of ./libs, whether or not your system has those libraries installed.
 
-If it doesnt run on your linux distro, you will have to try to build the executable yourself.  In that case, it is hoped that this script will work for you.  The intent was to provide all the needed interface/include files under ./libs/.
-
-The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14 [dating from june 2011].  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system (and be rebuildable).
-
-If the delivered linux binary does not run...
-
-* Manually install GNAT GPL from libre.adacore.com/download/.
-* Rerun the linux compile script lbuildAll.sh
 
 
 ### Link Problems during linux build:
 
-On a linux build machine, you might have minor link errors, depending on its configuration.  For example, if you are missing "libz", you can copy "libz.so" from GNAT.../lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+On a linux build machine, you might have minor link errors, depending on its configuration.  For example, if you are missing "libz", you can copy "libz.so" from the AdaCore ~/lib/ directory into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
 
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
@@ -202,7 +179,7 @@ whence the linker should now be able to find what it wants.  But if there is mor
 ## What is special about this project?
 It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, SFML-Audio with a homebrew binding, and a GNAT compiler.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, and a GNAT compiler.
 
 Written in C++ style, the code neglects many safety features available to Ada, but it does serve as a working example for learning OpenGL.  The Ada bindings used are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings are usable as a standalone library for most any OpenGL project that uses Ada.
 
@@ -210,13 +187,13 @@ Thus, for the C++ programmer the code should be easy to comprehend; and for the 
 
 
 --------------------------
-## Legal Issues:
+## License:
 
 
 Reliquarium is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2020  <fastrgv@gmail.com>
+ Copyright (C) 2021  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -250,11 +227,50 @@ https://github.com/fastrgv?tab=repositories
 
 
 ## Revision History:
+**ver 1.8.6 -- 28oct20**
+* Updated all glfw libs to v3.3.2.
+* Elliminated SFML-audio entirely.
+* Greatly simplified build process.
+
+
+**ver 1.8.5 -- 18apr20**
+
+* OpenGL v3.3 is now sufficient to run this app...allows older hardware.
+* Improved coding style to read WAV file while "protected";
+* Added a move-sound mute-toggle using v-key (Volume);
+
+
+**ver 1.8.4 -- 3apr20**
+
+* Created new linux sound system with no latency:  a WAV-player using an Ada binding to the ALSA sound library.
+* Sliding sounds have been reenabled; other sounds equilibrated.
+
+
+**ver 1.8.3 -- 10mar20**
+
+* Fixed bad sound file. Sliding sounds disabled on Linux due to significant latency.
+
+
+**ver 1.8.2 -- 18jan20**
+
+* Alternate sound system greatly improves linux portability.
+
+
+**ver 1.8.1 -- 5jan20**
+
+* Added FreeTypeAda (w/TTF);
+* Corrected & improved help screens;
+
+
+**ver 1.8.0 -- 28dec19**
+
+* Converted to GLFW;
+* Improved & simplified code structure & layout;
+
 
 **ver 1.7.0 -- 20dec19**
 
 * Fixed path problem that disallowed running from "relic" directory.
-* Updated SDL2 to v2.0.10, including binding, libs, & scripts.
 
 
 **ver 1.6.9 -- 26nov19**
@@ -265,8 +281,6 @@ https://github.com/fastrgv?tab=repositories
 
 **ver 1.6.8 -- 26jun19**
 
-* Updated SDL2 to version 2.0.9
-* Updated Ada binding to SDL2;
 * Changed axis labels to High Contrast Font;
 * Darkened background;
 * Executables can now be run from either of 2 directories.
@@ -276,4 +290,5 @@ https://github.com/fastrgv?tab=repositories
 **ver 1.0 -- 21jan16**
 
 * initial release
+
 
