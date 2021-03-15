@@ -95,7 +95,9 @@ Other keys active:
 Windows users should read "windows-setup.txt".
 Mac users see "osx-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.  On OSX, you can use Keka.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.  The proper command to extract the archive and maintain the directory structure is "7z x filename".
+
+On OSX, you can use Keka.
 
 Open a command line terminal, then cd to the install directory.
 
