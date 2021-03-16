@@ -8,6 +8,9 @@ Click on the large 7z file under releases for all source & binaries, or try this
 
 https://github.com/fastrgv/Reliquarium/releases/download/v1.8.7/re20feb21.7z
 
+Type "7z x filename" to extract the archive.
+
+
 
 
 # Reliquarium with OpenAL sound
