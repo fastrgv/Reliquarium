@@ -20,7 +20,7 @@ Type "7z x filename" to extract the archive.
 
 * Upgraded to OpenAL sound.
 
-## See older revision history at end of file
+### See older revision history at end of file
 
 
 
