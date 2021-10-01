@@ -1,5 +1,7 @@
 ![screenshot](https://github.com/fastrgv/Reliquarium/blob/master/t6a.png)
 
+![screenshot](https://github.com/fastrgv/Reliquarium/blob/master/relic.gif)
+
 # Reliquarium
 Reliquarium is a very unique set of four 3D slider puzzles, all with a Crystal Skull theme.
 
