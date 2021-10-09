@@ -20,6 +20,11 @@ Type "7z x filename" to extract the archive.
 
 # Reliquarium with OpenAL sound
 
+**ver 1.8.8 -- 10oct2021**
+* Enabled normal window exit.
+* Added option to toggle numerals off, to increase challenge.
+* Added slight offset to separate distinct puzzle pieces.
+* Fixed GL error message in Linux.
 
 **ver 1.8.7 -- 20feb21**
 
@@ -84,6 +89,7 @@ Other keys active:
 * (i)/(o)-keys => Zoom In/Out
 * (spc)-key => Restart
 * (c)-key => nextSkinColor
+* (n)-key => toggle Numerals
 * (h)-key => Help toggle
 * 0-9 => select numbered block
 * (s)-key => select Skull
