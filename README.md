@@ -79,7 +79,7 @@ In other words...
 
 This terminology for key-assignments assumes X+ is rightward, Y+ is upward, and Z+ is outward...the standard "view" for geometrical discussions in mathematics and physics.  Note that the X, Y, & Z Axes are displayed by default.
 
-Obviously this might get confusing if you rotate the figure to get a better look. That is part of the challenge!
+Obviously this might get confusing if you rotate the figure to get a better look. That is part of the challenge! 
 
 Other keys active:
 
