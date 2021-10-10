@@ -26,7 +26,7 @@ downloading 7z [from www.7-zip.org].  It's free, and works nicely:
 2) cd <game-dir>
 
 Note that WSL [Windows Subsystem for Linux] is not supported.
-Simple use the Windows executable provided.
+Simply use the Windows executable provided.
 
 Note also that error messages about failure to create links
 can be IGNORED.  These linked files are used only 
