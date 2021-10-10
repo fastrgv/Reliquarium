@@ -40,9 +40,9 @@ Reliquarium is a very unique set of four 3D slider puzzles, all with a Crystal S
 
 A reckless raider from Indiana has been plundering tombs and displacing ancient relics.  The objective is to carefully return each relic to its rightful place at the center of its cubical box by rearranging the numbered blocks back into their proper order.  Colors and numerals help determine the proper order.
 
-Dragging the cursor rotates the cube for a better view angle.  The keys n/a (Nearer/Away) or the mouse wheel zooms.  Typing a number selects a block to move.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
+Dragging the cursor with the LEFT mouse button rotates the cube for a better view angle.  The keys n/a (Nearer/Away) or the mouse wheel zooms.  Typing a number selects a block to move.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
 
-Alternatively, you can select a block by clicking the cursor on it, prior to the move.
+Alternatively, you can select a block by Right-clicking the cursor on it, prior to the move.
 
 As indicated on screen, (h) will toggle a help screen.
 
