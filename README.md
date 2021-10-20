@@ -20,18 +20,25 @@ Type "7z x filename" to extract the archive.
 
 # Reliquarium with OpenAL sound
 
+
+**ver 1.8.9 -- 21oct2021**
+* Updated libraries.
+* Increased separation of puzzle pieces.
+* Updated tomb2 display to match others.
+* Besides Win64, I now provide a Win32 build, to support older platforms.
+
 **ver 1.8.8 -- 10oct2021**
 * Enabled normal window exit.
 * Added option to toggle numerals off, to increase challenge.
 * Added slight offset to separate distinct puzzle pieces.
 * Fixed GL error message in Linux.
 
+
 **ver 1.8.7 -- 20feb21**
 
 * Upgraded to OpenAL sound.
 
-### See older revision history at end of file
-
+## See older revision history at end of file
 
 
 
@@ -42,7 +49,9 @@ A reckless raider from Indiana has been plundering tombs and displacing ancient 
 
 Dragging the cursor with the LEFT mouse button rotates the cube for a better view angle.  The keys n/a (Nearer/Away) or the mouse wheel zooms.  Typing a number selects a block to move.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
 
-Alternatively, you can select a block by Right-clicking the cursor on it, prior to the move.
+Alternatively, you can select a block by RIGHT-clicking the cursor on it, prior to the move.
+
+To make the puzzles much more challenging, you can toggle the numerals with the n-key. Of course that means you will need to use the right mouse button to select the piece you want to move.
 
 As indicated on screen, (h) will toggle a help screen.
 
@@ -79,7 +88,7 @@ In other words...
 
 This terminology for key-assignments assumes X+ is rightward, Y+ is upward, and Z+ is outward...the standard "view" for geometrical discussions in mathematics and physics.  Note that the X, Y, & Z Axes are displayed by default.
 
-Obviously this might get confusing if you rotate the figure to get a better look. That is part of the challenge! 
+Obviously this might get confusing if you rotate the figure to get a better look. That is part of the challenge!
 
 Other keys active:
 
@@ -110,26 +119,29 @@ Other keys active:
 Windows users should read "windows-setup.txt".
 Mac users see "osx-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.  The proper command to extract the archive and maintain the directory structure is "7z x filename".
-
-On OSX, you can use Keka.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.  On OSX, you can use Keka.
 
 Open a command line terminal, then cd to the install directory.
 
 --------------------------------------------------------------------
-Windows users type "winreliq.bat".
+Windows users type "winreliq.bat" for Win64, or "w32reliq.bat" for Win32.
 
 --------------------------------------------------------------------
 Linux users type "gnureliq.sh" to start the game.
 In Linux, you may also double click the icon for reliquarium in the file manager.
 
-The distributed linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to recompile. Another option, however is that linux users can probably run the Windows executables under "wine". Here is an example that works on my linux machine:
+The distributed linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to recompile. Another option, however is that linux users can probably run the Windows executables under "wine". Here are two examples that work on my linux machine:
+
+		wine bin/win/reliquarium.exe
 
 		wine bin/win/tomb6.exe
 
 Thusly, each executable can be called directly, skipping the selection screen. Without wine that would be:
 
 		bin/gnu/tomb6
+
+On the other hand, I suggest that Windows users DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
+
 
 --------------------------------------------------------------------
 The Mac command line version is initiated by opening a terminal, navigating to the install_directory, and typing "macreliq.sh" on the command line.
@@ -149,7 +161,7 @@ Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 
 ## Open Source libraries included for rebuilding:
 * systems:  Windows, OSX or GNU/Linux
-* a recent gnat compiler
+* a recent GNAT or AdaCore Ada compiler
 * the ./adabindings/ directory contains Ada interfaces for:
 	* AdaPngLib
 	* gl
@@ -161,14 +173,14 @@ Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 
 ## Build instructions:
 
-Three [pre-compiled] binary executables are provided, one for Windows, one for gnu/linux and one for OSX.  The linux version, reliquarium, is intended to run in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:
-GLFW2, & freetype.
+Four [pre-compiled] binary executables are provided, two for Windows, one for gnu/linux and one for OSX.
 
-Build scripts for the free AdaCore GNAT compiler are provided;  a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT is required.
+Build scripts for the free AdaCore Ada compiler are provided;  a Windows or linux build machine need not have a C++ compiler installed.  GNAT from the GNU Compiler Collection will also work with slight changes to the scripts.
 
 -------------------------------------------------------
-msWin32 => wbuildAll.bat
+msWin32 => w32buildAll.bat
 
+msWin64 => wbuildAll.bat
 Note that the 64-bit AdaCore gnat compiler needs to be on your path to use this script.
 
 -------------------------------------------------------
@@ -307,5 +319,6 @@ https://github.com/fastrgv?tab=repositories
 **ver 1.0 -- 21jan16**
 
 * initial release
+
 
 
