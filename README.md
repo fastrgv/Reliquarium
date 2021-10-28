@@ -192,7 +192,7 @@ build script for generating a portable executable that will run on most OSX plat
 GNU/Linux => lbuildAll.sh
 
 utilizes the uncommon relocatable libraries (mainly GLFW) that are delivered in this bundle under ./libs/.  This is used to build a dynamically linked [gnu/linux] executable, which should run in the presence of ./libs, whether or not your system has those libraries installed.
-
+Please, see also the file "gnatUserNote.txt".
 
 
 ### Link Problems during linux build:
