@@ -20,6 +20,14 @@ Type "7z x filename" to extract the archive.
 
 # Reliquarium with OpenAL sound
 
+**ver 1.9.0 -- 15nov2021**
+
+* Updated glext64.lib.
+* Cleaned up libs; prepped rpath for GNAT.
+* Improved scripting supports both AdaCore & GNAT EXEs on Linux.
+* Updated all GLFW libs to newer [static] version, & scripts.
+* Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
+* Derestricted the directory of execution.
 
 **ver 1.8.9 -- 21oct2021**
 * Updated libraries.
