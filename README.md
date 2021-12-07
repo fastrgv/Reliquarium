@@ -249,7 +249,7 @@ Reliquarium is covered by the GNU GPL v3 as indicated in the sources:
 ## Media Files for Reliquarium:
 
 ### SoundFiles [x.wav]
-Some sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file creativeCommons.txt.  Others [eg. shriek] are from http://www.freesfx.co.uk.
+Some sounds are from freesound.org and are covered by the Creative Commons CC0 license.  Others [eg. shriek] are from http://www.freesfx.co.uk.
 
 ### ImageFiles 
 Images for textures were from pixabay.com have a CC0 license.  Files for text-textures were created using gimp and are also covered by the GNU GPL v3 license.
