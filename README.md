@@ -20,6 +20,12 @@ Type "7z x filename" to extract the archive.
 
 # Reliquarium with OpenAL sound
 
+**ver 1.9.1 -- 19jan2022**
+
+* Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
+* Updated linux libs to use static libfreetype.a & libpng16.a
+* Updated libglfw.
+
 **ver 1.9.0 -- 15nov2021**
 
 * Updated glext64.lib.
