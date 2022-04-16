@@ -20,6 +20,11 @@ Type "7z x filename" to extract the archive.
 
 # Reliquarium with OpenAL sound
 
+**ver 1.9.2 -- 16apr2022**
+
+* Reverted linux libraries to exclusively shared format for portability.
+* Alternate script for GNU-Ada also works, now.
+
 **ver 1.9.1 -- 19jan2022**
 
 * Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
