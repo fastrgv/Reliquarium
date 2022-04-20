@@ -234,6 +234,9 @@ Written in C++ style, the code neglects many safety features available to Ada, b
 
 Thus, for the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many potential improvements to be made.  Suggestions or improvements from Ada developers are welcomed.
 
+Open source Ada developers are welcome to help improve or extend this app.
+Developer or not, send comments, suggestions or questions to:
+fastrgv@gmail.com
 
 --------------------------
 ## License:
