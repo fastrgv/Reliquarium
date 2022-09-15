@@ -21,6 +21,13 @@ Type "7z x filename" to extract the archive.
 
 # Reliquarium with OpenAL sound
 
+**ver 1.9.3 -- 16sep2022**
+
+* Removed Win64 build.
+* Now using GNU Ada rather than defunct AdaCore compiler.
+
+
+
 **ver 1.9.2 -- 16apr2022**
 
 * Reverted linux libraries to exclusively shared format for portability.
