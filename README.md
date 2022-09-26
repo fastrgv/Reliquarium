@@ -21,6 +21,13 @@ Type "7z x filename" to extract the archive.
 
 # Reliquarium with OpenAL sound
 
+**ver 1.9.4 -- 26sep2022**
+
+* Now using simpler-to-setup GNU Ada for Win64.
+* Removed w32 build.
+* Added command to raise select-Window after exitting puzzle.
+
+
 **ver 1.9.3 -- 16sep2022**
 
 * Removed Win64 build.
