@@ -139,8 +139,7 @@ Keys active:
 * (m)-key => select Medusa head
 * (v)-key => toggle move-sounds
 
-Main Movement Keys
-Arrows		Letters
+Main Movement Keys Arrows, Letters
 * (up)-key, (u)-key => +Y
 * (dn)-key, (d)-key => -Y
 * (lf)-key, (l)-key => -X
