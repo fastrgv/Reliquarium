@@ -124,7 +124,7 @@ This terminology for key-assignments assumes X+ is rightward, Y+ is upward, and 
 
 Obviously this might get confusing if you rotate the figure to get a better look. That is part of the challenge!
 
-Other keys active:
+Keys active:
 
 * (esc)-key => Exit puzzle
 * (q)-key => Exit selection screen
@@ -138,6 +138,18 @@ Other keys active:
 * (s)-key => select Skull
 * (m)-key => select Medusa head
 * (v)-key => toggle move-sounds
+
+Main Movement Keys
+Arrows		Letters
+* (up)-key, (u)-key => +Y
+* (dn)-key, (d)-key => -Y
+* (lf)-key, (l)-key => -X
+* (rt)-key, (r)-key => +X
+
+* (f)-key => +Z
+* (b)-key => -Z
+
+
 
 ------------------------------------------------------------
 
