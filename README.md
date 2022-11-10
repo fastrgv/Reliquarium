@@ -19,7 +19,21 @@ Type "7z x filename" to extract the archive.
 
 
 
+
+FSF link:
+https://sourceforge.net/projects/reliquarium/files/10nov2022/
+
 # Reliquarium with OpenAL sound
+
+
+## Recent Changes
+
+
+**ver 1.9.5 -- 10nov2022**
+
+* Estimated difficulty of T5 is now Medium.
+* Improved documentation & coding.
+
 
 **ver 1.9.4 -- 26sep2022**
 
@@ -31,8 +45,8 @@ Type "7z x filename" to extract the archive.
 **ver 1.9.3 -- 16sep2022**
 
 * Removed Win64 build.
-* Now using GNU Ada rather than defunct AdaCore compiler.
-
+* Now using GNU Ada rather than defunct AdaCore compiler, even on OSX.
+* Removed use of Xcode compiler on OSX.
 
 
 **ver 1.9.2 -- 16apr2022**
@@ -40,45 +54,26 @@ Type "7z x filename" to extract the archive.
 * Reverted linux libraries to exclusively shared format for portability.
 * Alternate script for GNU-Ada also works, now.
 
-**ver 1.9.1 -- 19jan2022**
 
-* Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
-* Updated linux libs to use static libfreetype.a & libpng16.a
-* Updated libglfw.
-
-**ver 1.9.0 -- 15nov2021**
-
-* Updated glext64.lib.
-* Cleaned up libs; prepped rpath for GNAT.
-* Improved scripting supports both AdaCore & GNAT EXEs on Linux.
-* Updated all GLFW libs to newer [static] version, & scripts.
-* Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
-* Derestricted the directory of execution.
-
-**ver 1.8.9 -- 21oct2021**
-* Updated libraries.
-* Increased separation of puzzle pieces.
-* Updated tomb2 display to match others.
-* Besides Win64, I now provide a Win32 build, to support older platforms.
-
-**ver 1.8.8 -- 10oct2021**
-* Enabled normal window exit.
-* Added option to toggle numerals off, to increase challenge.
-* Added slight offset to separate distinct puzzle pieces.
-* Fixed GL error message in Linux.
-
-
-**ver 1.8.7 -- 20feb21**
-
-* Upgraded to OpenAL sound.
-
-## See older revision history at end of file
+### See older revision history at end of file
 
 
 
 ## Reliquarium Game Description
 Reliquarium is a very unique set of four 3D slider puzzles, all with a Crystal Skull theme.  Works on Macs running OSX and PCs running Windows or GNU/Linux.
 
+-----------------------------------------------------------
+Featuring
+
+	* no installation
+	* no dependencies
+	* simply unzip in your Downloads directory, and run;
+	* or unzip onto a USB flash drive [w/same file format] and run.
+-----------------------------------------------------------
+
+=========================================================
+
+## Introduction
 A reckless raider from Indiana has been plundering tombs and displacing ancient relics.  The objective is to carefully return each relic to its rightful place at the center of its cubical box by rearranging the numbered blocks back into their proper order.  Colors and numerals help determine the proper order.
 
 Dragging the cursor with the LEFT mouse button rotates the cube for a better view angle.  The keys n/a (Nearer/Away) or the mouse wheel zooms.  Typing a number selects a block to move.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
@@ -99,7 +94,7 @@ Temporarily combine complementary pieces to maximize contiguous empty swap space
 
 
 ## Game Features
-* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
+* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
 
 * Windows, GNU/Linux and OSX binaries provided, as well as full source.
 
@@ -140,6 +135,7 @@ Keys active:
 * (v)-key => toggle move-sounds
 
 Main Movement Keys: Arrows, Letters
+
 * (up)-key, (u)-key => +Y
 * (dn)-key, (d)-key => -Y
 * (lf)-key, (l)-key => -X
@@ -147,8 +143,6 @@ Main Movement Keys: Arrows, Letters
 
 * (f)-key => +Z
 * (b)-key => -Z
-
-
 
 ------------------------------------------------------------
 
@@ -169,13 +163,13 @@ Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.  On OSX,
 Open a command line terminal, then cd to the install directory.
 
 --------------------------------------------------------------------
-Windows users type "winreliq.bat" for Win64, or "w32reliq.bat" for Win32.
+Windows users type "w64reliq.bat" 
 
 --------------------------------------------------------------------
 Linux users type "gnureliq.sh" to start the game.
 In Linux, you may also double click the icon for reliquarium in the file manager.
 
-The distributed linux executables require glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to recompile. Another option, however is that linux users can probably run the Windows executables under "wine". Here are two examples that work on my linux machine:
+Another option, however is that linux users can probably run the Windows executables under "wine". Here are two examples that work on my linux machine:
 
 		wine bin/win/reliquarium.exe
 
@@ -206,7 +200,9 @@ Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 
 ## Open Source libraries included for rebuilding:
 * systems:  Windows, OSX or GNU/Linux
-* a recent GNAT or AdaCore Ada compiler
+* a recent Ada compiler;  eg. GNU-Ada...try this source:
+	https://github.com/alire-project/GNAT-FSF-builds/releases
+
 * the ./adabindings/ directory contains Ada interfaces for:
 	* AdaPngLib
 	* gl
@@ -218,50 +214,46 @@ Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
 
 ## Build instructions:
 
-Four [pre-compiled] binary executables are provided, two for Windows, one for gnu/linux and one for OSX.
+Three [pre-compiled] binary executables are provided, one for Windows, one for gnu/linux and one for OSX.
 
-Build scripts for the free AdaCore Ada compiler are provided;  a Windows or linux build machine need not have a C++ compiler installed.  GNAT from the GNU Compiler Collection will also work with slight changes to the scripts.
+Build scripts for GNU Ada [with its own g++] are provided. 
 
 -------------------------------------------------------
-msWin32 => w32buildAll.bat
+msWin64 => setpath64.bat + wbuildAll.bat
 
-msWin64 => wbuildAll.bat
-Note that the 64-bit AdaCore gnat compiler needs to be on your path to use this script.
+Windows users please read gnuAdaOnWindows.txt
+
 
 -------------------------------------------------------
 MacOSX => obuildAll.sh:
 
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries installed.  Any Mac with a recent but standard configuration of OSX should be able to rebuild using this script.  Here, all nonstandard libraries are included under the ./libs/ directory and are statically linked.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries installed.  Any Mac with a recent but standard configuration of OSX should be able to rebuild using this script.  Here, all nonstandard libraries are included under the ./libs/ directory and are statically linked. 
+
+Note: Xcode is not required.
+
 
 ------------------------------------------------------
-GNU/Linux => lbuildAll.sh
+GNU/Linux => lbuildAll.sh (GNU Ada)
 
 utilizes the uncommon relocatable libraries (mainly GLFW) that are delivered in this bundle under ./libs/.  This is used to build a dynamically linked [gnu/linux] executable, which should run in the presence of ./libs, whether or not your system has those libraries installed.
-Please, see also the file "gnatUserNote.txt".
 
 
-### Link Problems during linux build:
-
-On a linux build machine, you might have minor link errors, depending on its configuration.  For example, if you are missing "libz", you can copy "libz.so" from the AdaCore ~/lib/ directory into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
-
-sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
-
-whence the linker should now be able to find what it wants.  But if there is more than one file libGL present on your system, make sure you use the best one;  i.e. the one that uses your accelerated-graphic-driver.
 
 
 
 ## What is special about this project?
 It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, and a GNAT compiler.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, and an Ada compiler.
 
 Written in C++ style, the code neglects many safety features available to Ada, but it does serve as a working example for learning OpenGL.  The Ada bindings used are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings are usable as a standalone library for most any OpenGL project that uses Ada.
 
-Thus, for the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many potential improvements to be made.  Suggestions or improvements from Ada developers are welcomed.
+Thus, for the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many potential improvements to be made.  
 
 Open source Ada developers are welcome to help improve or extend this app.
 Developer or not, send comments, suggestions or questions to:
 fastrgv@gmail.com
+
 
 --------------------------
 ## License:
@@ -270,7 +262,7 @@ fastrgv@gmail.com
 Reliquarium is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2021  <fastrgv@gmail.com>
+ Copyright (C) 2022  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -288,8 +280,12 @@ Reliquarium is covered by the GNU GPL v3 as indicated in the sources:
 
 ## Media Files for Reliquarium:
 
+It is my intention to use media with copyrights or licenses that are compatible with GPLv3. Please notify me if you believe there is an incompatibility, and it will be removed ASAP, eg a CC-by-NC license is NOT GPL compatible.
+
+
+
 ### SoundFiles [x.wav]
-Some sounds are from freesound.org and are covered by the Creative Commons CC0 license.  Others [eg. shriek] are from http://www.freesfx.co.uk.
+Some sounds are from freesound.org and are covered by the Creative Commons CC0 license documented in the accompanying file ./docs/creativeCommonsCC0.txt.  Others [eg. shriek] are from http://www.freesfx.co.uk, which have an attribution requirement, but no legal restrictions otherwise. See ./docs/freeSFXlicense.txt.
 
 ### ImageFiles 
 Images for textures were from pixabay.com have a CC0 license.  Files for text-textures were created using gimp and are also covered by the GNU GPL v3 license.
@@ -298,12 +294,56 @@ Images for textures were from pixabay.com have a CC0 license.  Files for text-te
 ... to Serhiy and Peter Grabarchuk for their Hole in One puzzle [tomb2], one of my inspirations for the other 3 puzzles in Reliquarium.
 
 ----------------------------------------------------------------
-## Best Download Site for all my games:
+## Download Site for all my games:
 https://github.com/fastrgv?tab=repositories
-
+https://www.indiedb.com/members/fastrgv/games
+https://fastrgv.itch.io
+https://sourceforge.net/u/fastrgv/profile/
+https://gamejolt.com/@fastrgv/games
 
 
 ## Revision History:
+
+
+**ver 1.9.1 -- 19jan2022**
+
+* Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
+* Updated linux libs to use static libfreetype.a & libpng16.a
+* Updated libglfw.
+* Ensured all media now have licenses compatible with GPLv3.
+
+
+**ver 1.9.0 -- 15nov2021**
+
+* Updated glext64.lib.
+* Cleaned up libs; prepped rpath for GNAT.
+* Improved scripting supports both AdaCore & GNAT EXEs on Linux.
+* Updated all GLFW libs to newer [static] version, & scripts.
+* Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
+* Derestricted the directory of execution.
+
+
+
+**ver 1.8.9 -- 21oct2021**
+
+* Updated libraries.
+* Increased separation of puzzle pieces.
+* Updated tomb2 display to match others.
+* Besides Win64, I now provide a Win32 build, to support older platforms.
+
+**ver 1.8.8 -- 10oct2021**
+
+* Enabled normal window exit.
+* Added option to toggle numerals off, to increase challenge.
+* Added slight offset to separate distinct puzzle pieces.
+* Fixed GL error message in Linux.
+
+
+**ver 1.8.7 -- 20feb21**
+
+* Upgraded to OpenAL sound.
+
+
 **ver 1.8.6 -- 28oct20**
 * Updated all glfw libs to v3.3.2.
 * Elliminated SFML-audio entirely.
