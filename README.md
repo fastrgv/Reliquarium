@@ -20,36 +20,19 @@ Type "7z x filename" to extract the archive.
 
 
 
+
+
 # Reliquarium with OpenAL sound
 
 
 ## Recent Changes
 
 
-**ver 1.9.5 -- 10nov2022**
+**ver 2.0.0 -- 25jun2023**
 
-* Estimated difficulty of T5 is now Medium.
-* Improved documentation & coding.
-
-
-**ver 1.9.4 -- 26sep2022**
-
-* Now using simpler-to-setup GNU Ada for Win64.
-* Removed w32 build.
-* Added command to raise select-Window after exitting puzzle.
-
-
-**ver 1.9.3 -- 16sep2022**
-
-* Removed Win64 build.
-* Now using GNU Ada rather than defunct AdaCore compiler, even on OSX.
-* Removed use of Xcode compiler on OSX.
-
-
-**ver 1.9.2 -- 16apr2022**
-
-* Reverted linux libraries to exclusively shared format for portability.
-* Alternate script for GNU-Ada also works, now.
+* Discontiued OSX development. This makes the package much smaller to deliver.
+* Added an autosave function to t4, t5, t6 to restore the previous configuration at startup. It also gives developer a better chance to debug after an abort is reported.
+* All puzzles now begin by showing the goal configuration, until the user presses the equal-key.
 
 
 ### See older revision history at end of file
@@ -57,33 +40,48 @@ Type "7z x filename" to extract the archive.
 
 
 ## Reliquarium Game Description
-Reliquarium is a very unique set of four 3D slider puzzles, all with a Crystal Skull theme.  Works on Macs running OSX and PCs running Windows or GNU/Linux.
+Reliquarium is a very unique set of 3-Dimensional slider puzzles with a Crystal Skull theme. 
+These belong to a new category of puzzle that would be impossible to build or manipulate in physical form. 
+They can help improve 3D visualization and problem solving skills. 
+Suitable for children preparing for math or geometry, as well as adults. 
+Works on laptops or PCs running Windows or Linux.
 
 -----------------------------------------------------------
 Featuring
 
-	* no installation
-	* no dependencies
-	* simply unzip in your Downloads directory, and run;
-	* or unzip onto a USB flash drive [w/same file format] and run.
+* no installation
+* no dependencies
+* simply unzip in your Downloads directory, and run;
+* or unzip onto a USB flash drive [w/same file format] and run.
 -----------------------------------------------------------
 
 =========================================================
 
 ## Introduction
-A reckless raider from Indiana has been plundering tombs and displacing ancient relics.  The objective is to carefully return each relic to its rightful place at the center of its cubical box by rearranging the numbered blocks back into their proper order.  Colors and numerals help determine the proper order.
+A reckless raider from Indiana has been plundering tombs and displacing ancient relics.  The objective here is to return each relic to its proper place at the center of its cubical box by rearranging the framework back into its original configuration.  Colors and numerals help determine the proper order.
 
-Dragging the cursor with the LEFT mouse button rotates the cube for a better view angle.  The keys n/a (Nearer/Away) or the mouse wheel zooms.  Typing a number selects a block to move.  Then use the keys {u,d,l,r,f,b} to move the selected block (Up,Down,Left,Right,Forward,Backward).
+Note that the X, Y, & Z axes are shown by default. 
 
-Alternatively, you can select a block by RIGHT-clicking the cursor on it, prior to the move.
+In "standard" position...
 
-To make the puzzles much more challenging, you can toggle the numerals with the n-key. Of course that means you will need to use the right mouse button to select the piece you want to move.
+* +X is rightward
+* +Y is upward
+* +Z points forward, toward the viewer
+
+Dragging the cursor with the LEFT mouse button rotates the puzzle for a better view angle.  The keys n/a (Nearer/Away) or the mouse wheel zooms.  
+
+Typing a number selects a piece to move.  
+Alternatively, you can select a piece by RIGHT-clicking the cursor on it, prior to the move.
+
+Then use the keys {u,d,l,r,f,b} to move the selected piece (Up,Down,Left,Right,Forward,Backward).
+
+To make the puzzles much more challenging, you can toggle the numerals off with the n-key. Of course that means you will need to use the right mouse button to select the piece you want to move.
 
 As indicated on screen, (h) will toggle a help screen.
 
 These puzzles are easy enough for children but will likely help anyone improve their 3D visualization, geometry, problem solving and computer skills.
 
-There are 4 variations numbered 2, 4, 5, and 6.  Puzzles # 4, 5, & 6 are my own creations, where the numeral represents the vertical size;  while #2 is a well-known [2D] Grabarchuk puzzle.  Generally, the puzzles with a smaller number are somewhat more difficult.  Puzzle #4 is the most compact & difficult.
+There are 4 variations numbered 2, 4, 5, and 6.  Puzzles # 4, 5, & 6 are my own creations, where the numeral represents the vertical size;  while #2 is a well-known Grabarchuk puzzle.  Generally, the puzzles with a smaller number are more difficult.  Puzzle #4 is the most compact & difficult.
 
 
 ## General Strategy
@@ -93,9 +91,9 @@ Temporarily combine complementary pieces to maximize contiguous empty swap space
 ## Game Features
 * Works on PCs or laptops running Windows or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
 
-* Windows & GNU/Linux binaries provided, as well as full source.
+* Windows & Linux binaries provided, as well as full source.
 
-* Laptop friendly controls;  supports Hdpi displays.
+* Laptop friendly controls;  supports High DPI displays.
 
 
 
@@ -112,9 +110,15 @@ In other words...
 *	right/left       : moves selected block in X-direction
 *	up/down          : moves selected block in Y-direction
 
-This terminology for key-assignments assumes X+ is rightward, Y+ is upward, and Z+ is outward...the standard "view" for geometrical discussions in mathematics and physics.  Note that the X, Y, & Z Axes are displayed by default.
+This terminology for key-assignments assumes 
 
-Obviously this might get confusing if you rotate the figure to get a better look. That is part of the challenge!
+* X+ is rightward, 
+* Y+ is upward, and 
+* Z+ is outward...
+
+the standard "view" for geometrical discussions in mathematics and physics.  Note that the X, Y, & Z Axes are displayed by default.
+
+Obviously this gets confusing after you rotate the figure to get a better look. That is part of the challenge!
 
 Keys active:
 
@@ -141,6 +145,16 @@ Main Movement Keys: Arrows, Letters
 * (f)-key => +Z
 * (b)-key => -Z
 
+--------------------------------------------------------------
+Cursor click:  selects the piece that the user wishes to move. This selection persists until another is made.
+
+But note that once a move direction is chosen:
+
+* if no selection is made then an autoselct feature will choose a piece that can move, if possible.
+* if the selected piece cannot move, the autoselect will try to find another that can.
+
+Thusly, if there is only one piece that can move in a given direction, you need not bother to select it before the move.
+
 ------------------------------------------------------------
 
 
@@ -153,14 +167,13 @@ Main Movement Keys: Arrows, Letters
 ## Setup and Running Reliquarium:
 
 Windows users should read "windows-setup.txt".
-Mac users see "osx-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.  On OSX, you can use Keka.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 Open a command line terminal, then cd to the install directory.
 
 --------------------------------------------------------------------
-Windows users type "w64reliq.bat" 
+Windows users type "winreliq.bat" 
 
 --------------------------------------------------------------------
 Linux users type "gnureliq.sh" to start the game.
@@ -176,42 +189,42 @@ Thusly, each executable can be called directly, skipping the selection screen. W
 
 		bin/gnu/tomb6
 
-On the other hand, I suggest that Windows users DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
+Windows users: DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
+
+
+**If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the command with "padsp",EG:  "padsp (ExeName)".**
+
 
 
 --------------------------------------------------------------------
-The Mac command line version is initiated by opening a terminal, navigating to the install_directory, and typing "macreliq.sh" on the command line.
 
-Also, for Mac users, there is a Mac bundle (named "reliquarium.app") that acts like a typical Mac app.  You can put it into your personal Applications directory with the command "cp -r reliquarium.app ~/Applications".  You can navigate to the installation directory in Finder and click the reliquarium.app icon named "Reliquarium".
-
-
-Select which of the four tombs to open by clicking on it.  Hit the (esc)-key at any time to return to the selector app;  hit (q)-key to quit completely.
+* Select which of the four tombs to open by clicking on it.
+* When ready to begin, hit the (=)-key.
+* Hit the (esc)-key at any time to return to the selector app;  
+* Hit (q)-key to quit completely.
 
 Hint: if the move sound goes silent, you probably hit the "v" key by mistake.
 
 --------------------------------------------------------------------------
 
-Feel free to send comments, suggestions or questions to:  <fastrgv@gmail.com>
-
---------------------------------------------------------------------------
-
 ## Open Source libraries included for rebuilding:
-* systems:  Windows, OSX or GNU/Linux
+* systems:  Windows or GNU/Linux
 * a recent Ada compiler;  eg. GNU-Ada...try this source:
 	https://github.com/alire-project/GNAT-FSF-builds/releases
 
 * the ./adabindings/ directory contains Ada interfaces for:
-	* AdaPngLib
 	* gl
 	* glfw
-	* FreeType
-	* OpenAL (Windows)
+	* OpenAL
+	* Stephen Sanguine's AdaPngLib
+	* Dmitriy Anisimkov's Zlib for Ada
+	* Felix Krause's FreeTypeAda
 
 
 
 ## Build instructions:
 
-Three [pre-compiled] binary executables are provided, one for Windows, one for gnu/linux and one for OSX.
+Two [pre-compiled] binary executables are provided, one for Windows & one for gnu/linux.
 
 Build scripts for GNU Ada [with its own g++] are provided. 
 
@@ -219,14 +232,6 @@ Build scripts for GNU Ada [with its own g++] are provided.
 msWin64 => setpath64.bat + wbuildAll.bat
 
 Windows users please read gnuAdaOnWindows.txt
-
-
--------------------------------------------------------
-MacOSX => obuildAll.sh:
-
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries installed.  Any Mac with a recent but standard configuration of OSX should be able to rebuild using this script.  Here, all nonstandard libraries are included under the ./libs/ directory and are statically linked. 
-
-Note: Xcode is not required.
 
 
 ------------------------------------------------------
@@ -239,7 +244,7 @@ utilizes the uncommon relocatable libraries (mainly GLFW) that are delivered in 
 
 
 ## What is special about this project?
-It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows & GNU/Linux systems.
 
 Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, and an Ada compiler.
 
@@ -249,7 +254,9 @@ Thus, for the C++ programmer the code should be easy to comprehend; and for the 
 
 Open source Ada developers are welcome to help improve or extend this app.
 Developer or not, send comments, suggestions or questions to:
-fastrgv@gmail.com
+	* fastrgv@gmail.com
+and please include the file "t#restore.txt" if you are reporting a freeze or abort,
+where "#" is 4/5/6.
 
 
 --------------------------
@@ -259,7 +266,7 @@ fastrgv@gmail.com
 Reliquarium is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2022  <fastrgv@gmail.com>
+ Copyright (C) 2023  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -292,14 +299,40 @@ Images for textures were from pixabay.com have a CC0 license.  Files for text-te
 
 ----------------------------------------------------------------
 ## Download Site for all my games:
-https://github.com/fastrgv?tab=repositories
-https://www.indiedb.com/members/fastrgv/games
-https://fastrgv.itch.io
-https://sourceforge.net/u/fastrgv/profile/
-https://gamejolt.com/@fastrgv/games
+* https://github.com/fastrgv?tab=repositories
+* https://www.indiedb.com/members/fastrgv/games
+* https://fastrgv.itch.io
+* https://sourceforge.net/u/fastrgv/profile/
+* https://gamejolt.com/@fastrgv/games
 
 
 ## Revision History:
+
+**ver 1.9.5 -- 10nov2022**
+
+* Estimated difficulty of T5 is now Medium.
+* Improved documentation & coding.
+
+
+**ver 1.9.4 -- 26sep2022**
+
+* Now using simpler-to-setup GNU Ada for Win64.
+* Removed w32 build.
+* Added command to raise select-Window after exitting puzzle.
+
+
+**ver 1.9.3 -- 16sep2022**
+
+* Removed Win64 build.
+* Now using GNU Ada rather than defunct AdaCore compiler, even on OSX.
+* Removed use of Xcode compiler on OSX.
+
+
+**ver 1.9.2 -- 16apr2022**
+
+* Reverted linux libraries to exclusively shared format for portability.
+* Alternate script for GNU-Ada also works, now.
+
 
 
 **ver 1.9.1 -- 19jan2022**
@@ -404,6 +437,5 @@ https://gamejolt.com/@fastrgv/games
 **ver 1.0 -- 21jan16**
 
 * initial release
-
 
 
