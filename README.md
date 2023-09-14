@@ -32,7 +32,7 @@ Type "7z x filename" to extract the archive.
 
 **ver 2.0.1 -- 15sep2023**
 
-* Fixed a logic error in tomb4 that might have prevented good moves, or caused an abort.
+* Fixed a logic error in tomb4 that might have prevented valid moves, or caused an abort.
 * Added autosolver to tomb4, the hardest puzzle.
 
 
