@@ -22,10 +22,18 @@ Type "7z x filename" to extract the archive.
 
 
 
+
+
 # Reliquarium with OpenAL sound
 
 
 ## Recent Changes
+
+
+**ver 2.0.1 -- 15sep2023**
+
+* Fixed a logic error in tomb4 that might have prevented good moves, or caused an abort.
+* Added autosolver to tomb4, the hardest puzzle.
 
 
 **ver 2.0.0 -- 25jun2023**
@@ -70,7 +78,7 @@ In "standard" position...
 
 Dragging the cursor with the LEFT mouse button rotates the puzzle for a better view angle.  The keys n/a (Nearer/Away) or the mouse wheel zooms.  
 
-Typing a number selects a piece to move.  
+The pieces are numbered so that typing a number selects a piece to move.  
 Alternatively, you can select a piece by RIGHT-clicking the cursor on it, prior to the move.
 
 Then use the keys {u,d,l,r,f,b} to move the selected piece (Up,Down,Left,Right,Forward,Backward).
@@ -81,7 +89,9 @@ As indicated on screen, (h) will toggle a help screen.
 
 These puzzles are easy enough for children but will likely help anyone improve their 3D visualization, geometry, problem solving and computer skills.
 
-There are 4 variations numbered 2, 4, 5, and 6.  Puzzles # 4, 5, & 6 are my own creations, where the numeral represents the vertical size;  while #2 is a well-known Grabarchuk puzzle.  Generally, the puzzles with a smaller number are more difficult.  Puzzle #4 is the most compact & difficult.
+There are 4 variations numbered 2, 4, 5, and 6.  Puzzles # 4, 5, & 6 are my own creations, where the number represents the vertical size;  while #2 is a well-known Grabarchuk puzzle. Puzzle #4 is the most compact & difficult; it appears on the upper right of the initial selection screen.
+
+As of September 2023 tomb4, the most difficult puzzle, is now equipped with a live autosolver. At any time you can press the (=)-key to initiate the solver and single step toward the solution. If at any time you think you can solve without help, you may resume moving the pieces yourself.
 
 
 ## General Strategy
@@ -118,7 +128,7 @@ This terminology for key-assignments assumes
 
 the standard "view" for geometrical discussions in mathematics and physics.  Note that the X, Y, & Z Axes are displayed by default.
 
-Obviously this gets confusing after you rotate the figure to get a better look. That is part of the challenge!
+Obviously this can get confusing if you rotate the figure, but this is part of the challenge!
 
 Keys active:
 
@@ -134,6 +144,7 @@ Keys active:
 * (s)-key => select Skull
 * (m)-key => select Medusa head
 * (v)-key => toggle move-sounds
+* (=)-key => autosolve (tomb4 only)
 
 Main Movement Keys: Arrows, Letters
 
@@ -172,24 +183,52 @@ Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 Open a command line terminal, then cd to the install directory.
 
---------------------------------------------------------------------
-Windows users type "winreliq.bat" 
+You can execute the selector app or you can skip it and execute each of the 4 puzzles directly.
 
 --------------------------------------------------------------------
-Linux users type "gnureliq.sh" to start the game.
-In Linux, you may also double click the icon for reliquarium in the file manager.
+**Windows** users type:
 
-Another option, however is that linux users can probably run the Windows executables under "wine". Here are two examples that work on my linux machine:
+	winreliq.bat
 
-		wine bin/win/reliquarium.exe
+to start the game using the selector app. 
 
-		wine bin/win/tomb6.exe
+Letting X represent one of the numerals 2,4,5,6,
+the direct-call options in Windows are:
 
-Thusly, each executable can be called directly, skipping the selection screen. Without wine that would be:
+	bin\win\tombX
 
-		bin/gnu/tomb6
+	or cd to bin\win and type
+
+	tombX
+
+to start the game.
 
 Windows users: DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
+
+--------------------------------------------------------------------
+**Linux** users can type:
+
+	gnureliq.sh
+
+or
+
+	bin/gnu/tombX
+
+	or cd to bin/gnu and then type:
+
+	tombX
+
+to start the game.
+
+Linux users with "wine" installed can run the Windows executables under "wine". Here are examples that work on my linux machine:
+
+	wine bin/win/reliquarium.exe
+
+	wine bin/win/tombX.exe
+
+	cd bin/win/
+	wine tombX
+
 
 
 **If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the command with "padsp",EG:  "padsp (ExeName)".**
@@ -197,9 +236,10 @@ Windows users: DO NOT try running the linux executables under WSL [Windows Subsy
 
 
 --------------------------------------------------------------------
+Both Windows and Linux users using the selector app:
 
 * Select which of the four tombs to open by clicking on it.
-* When ready to begin, hit the (=)-key.
+* When ready to begin, hit the (=)-key, or in tomb4, the (z)-key.
 * Hit the (esc)-key at any time to return to the selector app;  
 * Hit (q)-key to quit completely.
 
@@ -207,11 +247,14 @@ Hint: if the move sound goes silent, you probably hit the "v" key by mistake.
 
 --------------------------------------------------------------------------
 
-## Open Source libraries included for rebuilding:
+## Systems needed for rebuilding:
 * systems:  Windows or GNU/Linux
+
+## Open Source compiler needed for rebuilding:
 * a recent Ada compiler;  eg. GNU-Ada...try this source:
 	https://github.com/alire-project/GNAT-FSF-builds/releases
 
+## Open Source libraries included in this app:
 * the ./adabindings/ directory contains Ada interfaces for:
 	* gl
 	* glfw
@@ -433,6 +476,11 @@ Images for textures were from pixabay.com have a CC0 license.  Files for text-te
 * Executables can now be run from either of 2 directories.
 
 ...
+
+**ver 1.0 -- 21jan16**
+
+* initial release
+
 
 **ver 1.0 -- 21jan16**
 
