@@ -20,14 +20,15 @@ Type "7z x filename" to extract the archive.
 
 
 
-
-
-
-
 # Reliquarium with OpenAL sound
 
 
 ## Recent Changes
+
+
+**ver 2.0.2 -- 6oct2023**
+
+* Restored OSX build for the command line (without a bundle) .
 
 
 **ver 2.0.1 -- 15sep2023**
@@ -40,7 +41,7 @@ Type "7z x filename" to extract the archive.
 
 * Discontiued OSX development. This makes the package much smaller to deliver.
 * Added an autosave function to t4, t5, t6 to restore the previous configuration at startup. It also gives developer a better chance to debug after an abort is reported.
-* All puzzles now begin by showing the goal configuration, until the user presses the equal-key.
+* All puzzles now begin by showing the goal configuration, until the user presses the z-key.
 
 
 ### See older revision history at end of file
@@ -52,7 +53,7 @@ Reliquarium is a very unique set of 3-Dimensional slider puzzles with a Crystal 
 These belong to a new category of puzzle that would be impossible to build or manipulate in physical form. 
 They can help improve 3D visualization and problem solving skills. 
 Suitable for children preparing for math or geometry, as well as adults. 
-Works on laptops or PCs running Windows or Linux.
+Works on laptops or PCs running Windows, OSX, or Linux.
 
 -----------------------------------------------------------
 Featuring
@@ -99,9 +100,9 @@ Temporarily combine complementary pieces to maximize contiguous empty swap space
 
 
 ## Game Features
-* Works on PCs or laptops running Windows or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
+* Works on PCs or laptops running Windows, OSX, or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
 
-* Windows & Linux binaries provided, as well as full source.
+* Windows, OSX, & Linux binaries provided, as well as full source.
 
 * Laptop friendly controls;  supports High DPI displays.
 
@@ -172,18 +173,30 @@ Thusly, if there is only one piece that can move in a given direction, you need 
 ## Required for running:
 
 * graphics card & updated driver that supports OpenGL version 3.3 or later;
-* Windows, GNU/Linux;
+* Windows, OSX, GNU/Linux;
 
 
 ## Setup and Running Reliquarium:
 
+Mac/OSX users should read "osx-setup.txt".
+
 Windows users should read "windows-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
+Unzip the archive.  
+
+* On Linux & Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
+
+* On OSX, the command-line for Keka works thusly:
+	* /Applications/Keka.app/Contents/MacOS/Keka --cli 7z x (filename.7z)
 
 Open a command line terminal, then cd to the install directory.
 
 You can execute the selector app or you can skip it and execute each of the 4 puzzles directly.
+
+--------------------------------------------------------------------
+**Mac/OSX** users type:
+
+	macreliq.sh
 
 --------------------------------------------------------------------
 **Windows** users type:
@@ -236,10 +249,11 @@ Linux users with "wine" installed can run the Windows executables under "wine". 
 
 
 --------------------------------------------------------------------
-Both Windows and Linux users using the selector app:
+For users using the selector app:
 
 * Select which of the four tombs to open by clicking on it.
-* When ready to begin, hit the (=)-key, or in tomb4, the (z)-key.
+* The goal configuration is shown at startup.
+* When ready to begin, hit the (z)-key.
 * Hit the (esc)-key at any time to return to the selector app;  
 * Hit (q)-key to quit completely.
 
@@ -248,7 +262,7 @@ Hint: if the move sound goes silent, you probably hit the "v" key by mistake.
 --------------------------------------------------------------------------
 
 ## Systems needed for rebuilding:
-* systems:  Windows or GNU/Linux
+* systems:  Windows, OSX, or GNU/Linux
 
 ## Open Source compiler needed for rebuilding:
 * a recent Ada compiler;  eg. GNU-Ada...try this source:
@@ -267,9 +281,12 @@ Hint: if the move sound goes silent, you probably hit the "v" key by mistake.
 
 ## Build instructions:
 
-Two [pre-compiled] binary executables are provided, one for Windows & one for gnu/linux.
+Three [pre-compiled] binary executables are provided.
 
-Build scripts for GNU Ada [with its own g++] are provided. 
+Build scripts can be used as follows:
+
+-------------------------------------------------------
+osx => obuildAll.sh
 
 -------------------------------------------------------
 msWin64 => setpath64.bat + wbuildAll.bat
@@ -287,7 +304,7 @@ utilizes the uncommon relocatable libraries (mainly GLFW) that are delivered in 
 
 
 ## What is special about this project?
-It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows & GNU/Linux systems.
+It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, OSX, & GNU/Linux systems.
 
 Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, and an Ada compiler.
 
@@ -480,10 +497,4 @@ Images for textures were from pixabay.com have a CC0 license.  Files for text-te
 **ver 1.0 -- 21jan16**
 
 * initial release
-
-
-**ver 1.0 -- 21jan16**
-
-* initial release
-
 
