@@ -30,6 +30,14 @@ Type "7z x filename" to extract the archive.
 
 ## Recent Changes
 
+**ver 2.0.3 -- 24feb2024**
+
+* A restored winning game is now reset automatically (t4,t5,t6).
+* Updated with improved OpenAL sound code.
+* Selection window now minimizes itself when puzzling.
+* Made corrections to tomb4-solver code that had been causing aborts.
+* Corrections now allow running from either the root or EXE directory.
+
 
 **ver 2.0.2 -- 6oct2023**
 
