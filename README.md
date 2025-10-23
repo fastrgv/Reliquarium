@@ -30,31 +30,19 @@ Type "7z x filename" to extract the archive.
 
 ## Recent Changes
 
+
+**ver 2.0.4 -- 22oct2025**
+
+* Eliminated graphical anomalies on Windows 11 platforms.
+
+
 **ver 2.0.3 -- 24feb2024**
 
 * A restored winning game is now reset automatically (t4,t5,t6).
 * Updated with improved OpenAL sound code.
 * Selection window now minimizes itself when puzzling.
 * Made corrections to tomb4-solver code that had been causing aborts.
-* Corrections now allow running from either the root or EXE directory.
-
-
-**ver 2.0.2 -- 6oct2023**
-
-* Restored OSX build for the command line (without a bundle) .
-
-
-**ver 2.0.1 -- 15sep2023**
-
-* Fixed a logic error in tomb4 that might have prevented valid moves, or caused an abort.
-* Added autosolver to tomb4, the hardest puzzle.
-
-
-**ver 2.0.0 -- 25jun2023**
-
-* Discontiued OSX development. This makes the package much smaller to deliver.
-* Added an autosave function to t4, t5, t6 to restore the previous configuration at startup. It also gives developer a better chance to debug after an abort is reported.
-* All puzzles now begin by showing the goal configuration, until the user presses the z-key.
+* Must run from the EXE directory.
 
 
 ### See older revision history at end of file
@@ -105,7 +93,7 @@ These puzzles are easy enough for children but will likely help anyone improve t
 
 There are 4 variations numbered 2, 4, 5, and 6.  Puzzles # 4, 5, & 6 are my own creations, where the number represents the vertical size;  while #2 is a well-known Grabarchuk puzzle. Puzzle #4 is the most compact & difficult; it appears on the upper right of the initial selection screen.
 
-As of September 2023 tomb4, the most difficult puzzle, is now equipped with a live autosolver. At any time you can press the (=)-key to initiate the solver and single step toward the solution. If at any time you think you can solve without help, you may resume moving the pieces yourself.
+As of September 2025 tomb4, the most difficult puzzle, is now equipped with a live autosolver. At any time you can press the (=)-key to initiate the solver and single step toward the solution. If at any time you think you can solve without help, you may resume moving the pieces yourself.
 
 
 ## General Strategy
@@ -183,10 +171,10 @@ Thusly, if there is only one piece that can move in a given direction, you need 
 ------------------------------------------------------------
 
 
-## Required for running:
+## System Requirements for running delivered executables:
 
 * graphics card & updated driver that supports OpenGL version 3.3 or later;
-* Windows, OSX, GNU/Linux;
+* Windows, OSX(>=10.13), GNU/Linux;
 
 
 ## Setup and Running Reliquarium:
@@ -199,33 +187,34 @@ Unzip the archive.
 
 * On Linux & Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
-* On OSX, the command-line for Keka works thusly:
+* On OSX, Keka works well for 7Z files. The command-line for Keka is:
 	* /Applications/Keka.app/Contents/MacOS/Keka --cli 7z x (filename.7z)
 
 Open a command line terminal, then cd to the install directory.
 
-You can execute the selector app or you can skip it and execute each of the 4 puzzles directly.
+You can execute the script, or you can CD to the proper directory and execute the selector app named reliquarium.
+
+Letting X represent one of the numerals 2,4,5,6 ...
 
 --------------------------------------------------------------------
 **Mac/OSX** users type:
 
 	macreliq.sh
 
+	or cd to bin/osx/, then type 
+
+	tombX or reliquarium
+
+to start the game.
+
 --------------------------------------------------------------------
 **Windows** users type:
 
 	winreliq.bat
 
-to start the game using the selector app. 
+	or cd to bin\win\, then type
 
-Letting X represent one of the numerals 2,4,5,6,
-the direct-call options in Windows are:
-
-	bin\win\tombX
-
-	or cd to bin\win and type
-
-	tombX
+	tombX or reliquarium
 
 to start the game.
 
@@ -236,24 +225,19 @@ Windows users: DO NOT try running the linux executables under WSL [Windows Subsy
 
 	gnureliq.sh
 
-or
+	or cd to bin/gnu/, then type:
 
-	bin/gnu/tombX
-
-	or cd to bin/gnu and then type:
-
-	tombX
+	tombX or reliquarium
 
 to start the game.
 
 Linux users with "wine" installed can run the Windows executables under "wine". Here are examples that work on my linux machine:
 
-	wine bin/win/reliquarium.exe
-
-	wine bin/win/tombX.exe
-
 	cd bin/win/
+
 	wine tombX
+	or
+	wine reliquarium
 
 
 
@@ -265,8 +249,9 @@ Linux users with "wine" installed can run the Windows executables under "wine". 
 For users using the selector app:
 
 * Select which of the four tombs to open by clicking on it.
-* The goal configuration is shown at startup.
-* When ready to begin, hit the (z)-key.
+* The goal configuration is shown at startup. When ready to begin, hit the (z)-key. 
+* The (z)-key will restore your previous game.
+* If you want to restart from the beginning, use the (space)-key.
 * Hit the (esc)-key at any time to return to the selector app;  
 * Hit (q)-key to quit completely.
 
@@ -339,7 +324,7 @@ where "#" is 4/5/6.
 Reliquarium is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2023  <fastrgv@gmail.com>
+ Copyright (C) 2025  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -381,43 +366,44 @@ Images for textures were from pixabay.com have a CC0 license.  Files for text-te
 
 ## Revision History:
 
-**ver 1.9.5 -- 10nov2022**
 
+**ver 2.0.2 -- 6oct2023**
+* Restored OSX build for the command line (without a bundle) .
+
+**ver 2.0.1 -- 15sep2023**
+* Fixed a logic error in tomb4 that might have prevented valid moves, or caused an abort.
+* Added autosolver to tomb4, the hardest puzzle.
+
+**ver 2.0.0 -- 25jun2023**
+* Discontiued OSX development. This makes the package much smaller to deliver.
+* Added an autosave function to t4, t5, t6 to restore the previous configuration at startup. It also gives developer a better chance to debug after an abort is reported.
+* All puzzles now begin by showing the goal configuration, until the user presses the z-key.
+
+**ver 1.9.5 -- 10nov2022**
 * Estimated difficulty of T5 is now Medium.
 * Improved documentation & coding.
 
-
 **ver 1.9.4 -- 26sep2022**
-
 * Now using simpler-to-setup GNU Ada for Win64.
 * Removed w32 build.
 * Added command to raise select-Window after exitting puzzle.
 
-
 **ver 1.9.3 -- 16sep2022**
-
 * Removed Win64 build.
 * Now using GNU Ada rather than defunct AdaCore compiler, even on OSX.
 * Removed use of Xcode compiler on OSX.
 
-
 **ver 1.9.2 -- 16apr2022**
-
 * Reverted linux libraries to exclusively shared format for portability.
 * Alternate script for GNU-Ada also works, now.
 
-
-
 **ver 1.9.1 -- 19jan2022**
-
 * Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
 * Updated linux libs to use static libfreetype.a & libpng16.a
 * Updated libglfw.
 * Ensured all media now have licenses compatible with GPLv3.
 
-
 **ver 1.9.0 -- 15nov2021**
-
 * Updated glext64.lib.
 * Cleaned up libs; prepped rpath for GNAT.
 * Improved scripting supports both AdaCore & GNAT EXEs on Linux.
@@ -425,89 +411,62 @@ Images for textures were from pixabay.com have a CC0 license.  Files for text-te
 * Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
 * Derestricted the directory of execution.
 
-
-
 **ver 1.8.9 -- 21oct2021**
-
 * Updated libraries.
 * Increased separation of puzzle pieces.
 * Updated tomb2 display to match others.
 * Besides Win64, I now provide a Win32 build, to support older platforms.
 
 **ver 1.8.8 -- 10oct2021**
-
 * Enabled normal window exit.
 * Added option to toggle numerals off, to increase challenge.
 * Added slight offset to separate distinct puzzle pieces.
 * Fixed GL error message in Linux.
 
-
 **ver 1.8.7 -- 20feb21**
-
 * Upgraded to OpenAL sound.
-
 
 **ver 1.8.6 -- 28oct20**
 * Updated all glfw libs to v3.3.2.
 * Elliminated SFML-audio entirely.
 * Greatly simplified build process.
 
-
 **ver 1.8.5 -- 18apr20**
-
 * OpenGL v3.3 is now sufficient to run this app...allows older hardware.
 * Improved coding style to read WAV file while "protected";
 * Added a move-sound mute-toggle using v-key (Volume);
 
-
 **ver 1.8.4 -- 3apr20**
-
 * Created new linux sound system with no latency:  a WAV-player using an Ada binding to the ALSA sound library.
 * Sliding sounds have been reenabled; other sounds equilibrated.
 
-
 **ver 1.8.3 -- 10mar20**
-
 * Fixed bad sound file. Sliding sounds disabled on Linux due to significant latency.
 
-
 **ver 1.8.2 -- 18jan20**
-
 * Alternate sound system greatly improves linux portability.
 
-
 **ver 1.8.1 -- 5jan20**
-
 * Added FreeTypeAda (w/TTF);
 * Corrected & improved help screens;
 
-
 **ver 1.8.0 -- 28dec19**
-
 * Converted to GLFW;
 * Improved & simplified code structure & layout;
 
-
 **ver 1.7.0 -- 20dec19**
-
 * Fixed path problem that disallowed running from "relic" directory.
 
-
 **ver 1.6.9 -- 26nov19**
-
 * Repaired a library problem with GNU/Linux build that limited portability.
 * No problems with Mac/OSX or M.S. Windows builds.
 
-
 **ver 1.6.8 -- 26jun19**
-
 * Changed axis labels to High Contrast Font;
 * Darkened background;
 * Executables can now be run from either of 2 directories.
-
 ...
 
 **ver 1.0 -- 21jan16**
-
 * initial release
 
