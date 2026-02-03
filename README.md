@@ -24,16 +24,23 @@ Type "7z x filename" to extract the archive.
 
 
 
+Permalink:
 
-# Reliquarium with OpenAL sound
-
-
-## Recent Changes
+https://sourceforge.net/projects/reliquarium/files/latest/download
 
 
-**ver 2.0.4 -- 22oct2025**
+# Reliquarium
 
-* Eliminated graphical anomalies on Windows 11 platforms.
+		Unique 3D Skull Slider Puzzles 
+		using OpenGL, GLFW3 & OpenAL audio
+
+
+### Recent Changes
+
+**ver 2.0.5 -- 03feb2026**
+
+* Eliminated need to install MSVC-redistributables on Windows 10, 11.
+* Improved sounds.
 
 
 **ver 2.0.3 -- 24feb2024**
@@ -44,23 +51,22 @@ Type "7z x filename" to extract the archive.
 * Made corrections to tomb4-solver code that had been causing aborts.
 * Must run from the EXE directory.
 
-
 ### See older revision history at end of file
 
 
 
 ## Reliquarium Game Description
 Reliquarium is a very unique set of 3-Dimensional slider puzzles with a Crystal Skull theme. 
-These belong to a new category of puzzle that would be impossible to build or manipulate in physical form. 
-They can help improve 3D visualization and problem solving skills. 
-Suitable for children preparing for math or geometry, as well as adults. 
-Works on laptops or PCs running Windows, OSX, or Linux.
+A different, semi-abstract category of puzzle that would be difficult to build and manipulate in physical form. 
+These can help improve 3D visualization and problem solving skills. 
+Suitable for math, geometry or engineering students, as well as adult puzzlers. 
 
 -----------------------------------------------------------
 Featuring
 
 * no installation
 * no dependencies
+* runs on Windows, OSX, and Linux
 * simply unzip in your Downloads directory, and run;
 * or unzip onto a USB flash drive [w/same file format] and run.
 -----------------------------------------------------------
@@ -68,9 +74,9 @@ Featuring
 =========================================================
 
 ## Introduction
-A reckless raider from Indiana has been plundering tombs and displacing ancient relics.  The objective here is to return each relic to its proper place at the center of its cubical box by rearranging the framework back into its original configuration.  Colors and numerals help determine the proper order.
+A reckless raider from Indiana has been plundering tombs and mishandling ancient relics. As responsible archaeologists, it is our duty is to return each skull to its proper setting within its cubical casket by rearranging the pieces back to their original configuration. Arabic numerals and colors help determine the proper order.
 
-Note that the X, Y, & Z axes are shown by default. 
+Note that the X, Y, & Z Axes are shown by default, but are toggled with the a-key.
 
 In "standard" position...
 
@@ -78,12 +84,13 @@ In "standard" position...
 * +Y is upward
 * +Z points forward, toward the viewer
 
-Dragging the cursor with the LEFT mouse button rotates the puzzle for a better view angle.  The keys n/a (Nearer/Away) or the mouse wheel zooms.  
+Dragging the cursor with the LEFT mouse button rotates the puzzle for a better view angle.  The keys i/o (In/Out) or the mouse wheel zooms in & out.  
 
-The pieces are numbered so that typing a number selects a piece to move.  
+The pieces are numbered so that typing a number selects which piece to move.  
 Alternatively, you can select a piece by RIGHT-clicking the cursor on it, prior to the move.
+Laptop users can select by positioning the cursor on a piece, then pressing the [enter]-key.
 
-Then use the keys {u,d,l,r,f,b} to move the selected piece (Up,Down,Left,Right,Forward,Backward).
+Use the keys {u,d,l,r,f,b} to move the selected piece (Up,Down,Left,Right,Forward,Backward).
 
 To make the puzzles much more challenging, you can toggle the numerals off with the n-key. Of course that means you will need to use the right mouse button to select the piece you want to move.
 
@@ -91,9 +98,9 @@ As indicated on screen, (h) will toggle a help screen.
 
 These puzzles are easy enough for children but will likely help anyone improve their 3D visualization, geometry, problem solving and computer skills.
 
-There are 4 variations numbered 2, 4, 5, and 6.  Puzzles # 4, 5, & 6 are my own creations, where the number represents the vertical size;  while #2 is a well-known Grabarchuk puzzle. Puzzle #4 is the most compact & difficult; it appears on the upper right of the initial selection screen.
+There are 4 tombs to visit numbered 2, 4, 5, and 6.  Puzzles # 4, 5, & 6 are my own creations, where the number refers to the vertical size;  while #2 is a well-known Grabarchuk puzzle. Puzzle #4 is the most compact & difficult; it appears on the upper right of the initial selection screen.
 
-As of September 2025 tomb4, the most difficult puzzle, is now equipped with a live autosolver. At any time you can press the (=)-key to initiate the solver and single step toward the solution. If at any time you think you can solve without help, you may resume moving the pieces yourself.
+Tomb4, the most difficult puzzle, is now equipped with a live autosolver. At any time you can press the (=)-key to initiate the solver and single step toward the solution. If at any time you think you can solve without help, you may resume moving the pieces yourself.
 
 
 ## General Strategy
@@ -101,9 +108,9 @@ Temporarily combine complementary pieces to maximize contiguous empty swap space
 
 
 ## Game Features
-* Works on PCs or laptops running Windows, OSX, or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered, prebuilt binaries.
+* Works on PCs or laptops running Windows, OSX, or Linux.  And if Ada is installed you can build it yourself!  But first try using the delivered, prebuilt executables.
 
-* Windows, OSX, & Linux binaries provided, as well as full source.
+* Windows, OSX, & Linux executables are provided, as well as full source.
 
 * Laptop friendly controls;  supports High DPI displays.
 
@@ -118,9 +125,9 @@ Movement is controlled by the keys:
 
 In other words...
 
-*	forward/backward : moves selected block in Z direction
-*	right/left       : moves selected block in X-direction
-*	up/down          : moves selected block in Y-direction
+* **forward/backward :** moves selected block in Z direction
+* **right/left :** moves selected block in X-direction
+* **up/down :** moves selected block in Y-direction
 
 This terminology for key-assignments assumes 
 
@@ -134,29 +141,31 @@ Obviously this can get confusing if you rotate the figure, but this is part of t
 
 Keys active:
 
-* (esc)-key => Exit puzzle
-* (q)-key => Exit selection screen
-* (mouseWheel) => Zoom
-* (i)/(o)-keys => Zoom In/Out
-* (spc)-key => Restart
-* (c)-key => nextSkinColor
-* (n)-key => toggle Numerals
-* (h)-key => Help toggle
-* 0-9 => select numbered block
-* (s)-key => select Skull
-* (m)-key => select Medusa head
-* (v)-key => toggle move-sounds
-* (=)-key => autosolve (tomb4 only)
+* **(esc)-key =>** Exit puzzle
+* **(q)-key =>** Exit selection screen
+* **(mouseWheel) =>** Zoom
+* **(i)/(o)-keys =>** Zoom In/Out
+* **(spc)-key =>** Restart
+* **(c)-key =>** nextSkinColor
+* **(n)-key =>** toggle Numerals
+* **(a)-key =>** toggle XYZ-Axes
+* **(h)-key =>** Help toggle
+* **0-9 =>** select numbered block
+* **(s)-key =>** select Skull
+* **(m)-key =>** select Medusa head
+* **(v)-key =>** toggle move-sounds
+* **(=)-key =>** autosolve (tomb4 only)
 
 Main Movement Keys: Arrows, Letters
 
-* (up)-key, (u)-key => +Y
-* (dn)-key, (d)-key => -Y
-* (lf)-key, (l)-key => -X
-* (rt)-key, (r)-key => +X
+* **(up)-key, (u)-key =>** +Y
+* **(dn)-key, (d)-key =>** -Y
 
-* (f)-key => +Z
-* (b)-key => -Z
+* **(lf)-key, (l)-key =>** -X
+* **(rt)-key, (r)-key =>** +X
+
+* **(f)-key =>** +Z
+* **(b)-key =>** -Z
 
 --------------------------------------------------------------
 Cursor click:  selects the piece that the user wishes to move. This selection persists until another is made.
@@ -173,8 +182,8 @@ Thusly, if there is only one piece that can move in a given direction, you need 
 
 ## System Requirements for running delivered executables:
 
-* graphics card & updated driver that supports OpenGL version 3.3 or later;
-* Windows, OSX(>=10.13), GNU/Linux;
+* graphics card & driver that supports OpenGL version 3.3 or later;
+* Windows, OSX(>=10.13), Linux;
 
 
 ## Setup and Running Reliquarium:
@@ -199,22 +208,19 @@ Letting X represent one of the numerals 2,4,5,6 ...
 --------------------------------------------------------------------
 **Mac/OSX** users type:
 
-	macreliq.sh
+		macreliq.sh
+or cd to bin/osx/, then type 
 
-	or cd to bin/osx/, then type 
-
-	tombX or reliquarium
-
+		tombX or reliquarium
 to start the game.
 
 --------------------------------------------------------------------
 **Windows** users type:
 
-	winreliq.bat
+		winreliq.bat
+or cd to bin\win\, then type
 
-	or cd to bin\win\, then type
-
-	tombX or reliquarium
+		tombX or reliquarium
 
 to start the game.
 
@@ -223,21 +229,21 @@ Windows users: DO NOT try running the linux executables under WSL [Windows Subsy
 --------------------------------------------------------------------
 **Linux** users can type:
 
-	gnureliq.sh
+		gnureliq.sh
+or cd to bin/gnu/, then type:
 
-	or cd to bin/gnu/, then type:
-
-	tombX or reliquarium
+		tombX or reliquarium
 
 to start the game.
 
 Linux users with "wine" installed can run the Windows executables under "wine". Here are examples that work on my linux machine:
 
-	cd bin/win/
+		cd bin/win/
 
-	wine tombX
-	or
-	wine reliquarium
+		wine tombX
+or
+
+		wine reliquarium
 
 
 
@@ -249,6 +255,9 @@ Linux users with "wine" installed can run the Windows executables under "wine". 
 For users using the selector app:
 
 * Select which of the four tombs to open by clicking on it.
+
+...at this point, the selector app should minimize itself. Otherwise minimize it manually.
+
 * The goal configuration is shown at startup. When ready to begin, hit the (z)-key. 
 * The (z)-key will restore your previous game.
 * If you want to restart from the beginning, use the (space)-key.
@@ -260,7 +269,7 @@ Hint: if the move sound goes silent, you probably hit the "v" key by mistake.
 --------------------------------------------------------------------------
 
 ## Systems needed for rebuilding:
-* systems:  Windows, OSX, or GNU/Linux
+* systems:  Windows, OSX, or Linux
 
 ## Open Source compiler needed for rebuilding:
 * a recent Ada compiler;  eg. GNU-Ada...try this source:
@@ -293,16 +302,16 @@ Windows users please read gnuAdaOnWindows.txt
 
 
 ------------------------------------------------------
-GNU/Linux => lbuildAll.sh (GNU Ada)
+Linux => lbuildAll.sh (GNU Ada)
 
-utilizes the uncommon relocatable libraries (mainly GLFW) that are delivered in this bundle under ./libs/.  This is used to build a dynamically linked [gnu/linux] executable, which should run in the presence of ./libs, whether or not your system has those libraries installed.
+utilizes the uncommon relocatable libraries (mainly GLFW) that are delivered in this bundle under ./libs/.  This is used to build a dynamically linked [linux] executable, which should run in the presence of ./libs, whether or not your system has those libraries installed.
 
 
 
 
 
 ## What is special about this project?
-It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, OSX, & GNU/Linux systems.
+It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, OSX, & Linux systems.
 
 Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, and an Ada compiler.
 
@@ -324,7 +333,7 @@ where "#" is 4/5/6.
 Reliquarium is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2025  <fastrgv@gmail.com>
+ Copyright (C) 2026  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
